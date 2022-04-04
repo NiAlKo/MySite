@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="shortcut icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
+  <title>Главная</title>
+</head>
+
+  <body>
+    <div class="wrapper">
+      <main class="main-page main-page__container">
+        <section class="main-page__greeting greeting">
+  <h1 class="greeting__title" id="home">Привет! Меня зовут Николай. Я верстальщик и начинающий front-end разработчик</h1>
+  <img src="img/hero.jpg" alt="Nikolay Konkin." />
+  <p class="greeting__job __small-text">открыт для предложений</p>
+</section>
+ <section class="main-page__skills skills">
+  <h2 class="skills__title __h2" id="skills">Навыки</h2>
+  <p class="skills__text">
+    Создаю адаптивную, кросс-браузерную, валидную верстку на html/css. Верстаю по методологии БЭМ c препроцессором SCSS. Для
+    синхронизации изменений использую Git, исходники храню в GitHub. Свои проекты собираю через Gulp, могу менять конфигурацию
+    сборки.
+  </p>
+  <p class="skills__text">
+    JavaScript на уровне, чтобы подключить скрипты, добавить переходы, слайдеры и табы. Работаю в терминале. Стэк стандартный:
+  </p>
+  <div class="skills__stack stack-skills">
+    <div class="stack-skills__item">
+      <div class="stack-skills__icon">
+        <svg width="32" height="37" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="color-svg" d="M3.138 33.162.25.75h31.747L29.11 33.145 16.096 36.75" />
+          <path d="M16.124 33.993V3.41H29.1l-2.476 27.652" fill="#fff" fill-opacity=".4" />
+          <path
+            d="M6.148 7.374h9.976v3.973h-5.618l.367 4.07h5.25v3.963h-8.89L6.148 7.374Zm1.26 14.001h3.99l.28 3.177 4.446 1.19v4.148l-8.156-2.276"
+            fill="#282C34"
+          />
+          <path
+            d="M26.064 7.374h-9.958v3.973h9.59l.368-3.973Zm-.726 8.042h-9.232v3.973h4.9l-.463 5.163-4.437 1.19v4.13l8.138-2.258"
+            fill="#282C34"
+          />
+        </svg>
+      </div>
+      <span class="stack-skills__text">html</span>
+    </div>
+    <div class="stack-skills__item">
+      <div class="stack-skills__icon">
+        <svg width="32" height="37" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="color-svg" d="M3.139 33.151.25.75h31.743l-2.892 32.396-12.999 3.604L3.14 33.151Z" />
+          <path d="M26.625 31.083 29.097 3.4H16.122v30.596l10.503-2.912Z" fill="#fff" fill-opacity=".4" />
+          <path
+            d="m6.873 15.416.356 3.974h8.893v-3.974h-9.25Zm-.355-4.069h9.604V7.373H6.157l.361 3.974Zm9.604 14.39-.018.005-4.426-1.195-.283-3.17H7.407l.557 6.24 8.14 2.26.019-.005v-4.135Z"
+            fill="#282C34"
+          />
+          <path
+            d="M16.108 15.416v3.974H21l-.461 5.154-4.432 1.196v4.135l8.146-2.258.06-.672.934-10.462.097-1.067.717-8.043h-9.954v3.974h5.6l-.362 4.07h-5.238Z"
+            fill="#282C34"
+          />
+        </svg>
+      </div>
+      <span class="stack-skills__text">css</span>
+    </div>
+    <div class="stack-skills__item">
+      <div class="stack-skills__icon">
+        <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            class="color-svg"
+            d="M38.81 18.263 21.78 1.236a2.512 2.512 0 0 0-3.552 0l-3.535 3.536 4.485 4.485a2.981 2.981 0 0 1 3.777 3.803l4.323 4.322a2.984 2.984 0 0 1 3.963 2.823 2.987 2.987 0 0 1-2.694 2.975 2.988 2.988 0 0 1-3.059-4.112l-4.031-4.032v10.61A2.989 2.989 0 1 1 19 25.558V14.85a2.988 2.988 0 0 1-1.622-3.92L12.956 6.51 1.281 18.184a2.512 2.512 0 0 0 0 3.553l17.028 17.027a2.512 2.512 0 0 0 3.552 0L38.81 21.816a2.514 2.514 0 0 0 0-3.553Z"
+          />
+        </svg>
+      </div>
+      <span class="stack-skills__text">git</span>
+    </div>
+    <div class="stack-skills__item">
+      <div class="stack-skills__icon">
+        <svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            class="color-svg"
+            d="M0 0h36v36H0V0Zm27.52 30.18c-1.668 0-2.612-.87-3.337-2.055l-2.75 1.597c.994 1.963 3.024 3.46 6.165 3.46 3.214 0 5.606-1.669 5.606-4.715 0-2.825-1.623-4.081-4.497-5.314l-.846-.362c-1.451-.629-2.08-1.04-2.08-2.054 0-.822.628-1.45 1.62-1.45.97 0 1.596.41 2.176 1.45l2.635-1.692c-1.115-1.96-2.661-2.708-4.812-2.708-3.021 0-4.954 1.931-4.954 4.468 0 2.754 1.622 4.057 4.063 5.097l.845.363c1.543.675 2.463 1.086 2.463 2.246 0 .968-.895 1.668-2.297 1.668Zm-13.11-.022c-1.162 0-1.646-.797-2.177-1.74l-2.754 1.667c.798 1.689 2.366 3.09 5.075 3.09 2.998 0 5.051-1.594 5.051-5.097V16.53h-3.383v11.503c0 1.69-.7 2.125-1.812 2.125Z"
+          />
+        </svg>
+      </div>
+      <span class="stack-skills__text">js</span>
+    </div>
+    <div class="stack-skills__item">
+      <div class="stack-skills__icon">
+        <svg width="39" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            class="color-svg"
+            d="M0 5.855h9.118v2.682H0V5.855Zm0-4.98h9.118v2.682H0V.875Zm16.359 9.922H0v2.682h15.746c1.724 0 5.746.038 7.24 2.452v-1.494c-.728-2.375-2.873-3.64-6.628-3.64Zm.038 4.98H0v2.682h15.746c3.83 0 6.244.154 7.24.69v-1.188c-.766-1.877-3.984-2.183-6.59-2.183Zm-.038 12.643H0v-2.682h15.746c1.724 0 5.746-.038 7.24-2.451v1.494c-.728 2.375-2.873 3.64-6.628 3.64Zm.038-4.98H0v-2.682h15.746c3.83 0 6.244-.153 7.24-.69v1.188c-.766 1.877-3.984 2.184-6.59 2.184Zm10.574 9.616H39v-1.648H27.315c-1.034 0-3.486-.038-4.367-1.456v.92c.421 1.417 1.724 2.184 4.023 2.184Zm-.039-3.027h12.03v-1.647H27.315c-2.337 0-3.793-.077-4.367-.422v.728c.46 1.15 2.413 1.341 3.984 1.341Z"
+          />
+        </svg>
+      </div>
+      <span class="stack-skills__text">bem</span>
+    </div>
+    <div class="stack-skills__item">
+      <div class="stack-skills__icon">
+        <svg width="20" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            class="color-svg"
+            d="M10.026 33.142c-2.46 0-4.362-.37-5.276-.59-.625-.15-1.127-.306-1.509-.467l1.22 2.084.477 6.51c0 .73 2.318 1.321 5.178 1.321s5.178-.592 5.178-1.321l.378-6.581 1.153-2.019c-.383.163-.89.32-1.522.473-.915.22-2.816.59-5.277.59Zm6.839-21.183c-1.806.252-4.203.391-6.75.391-2.546 0-4.942-.139-6.748-.391-.895-.125-1.603-.272-2.104-.438a3.048 3.048 0 0 1-.517-.214l1.119 10.298a10.07 10.07 0 0 1 .63-1.592 9.4 9.4 0 0 1 .563-.98c.203-.306.419-.59.648-.848.23-.259.464-.481.705-.668.242-.186.485-.331.731-.436.246-.105.49-.158.73-.158.279 0 .547.076.807.228.26.152.502.398.728.738a.59.59 0 0 1 .099.23c.014.079.02.152.02.22a.586.586 0 0 1-.116.386.35.35 0 0 1-.278.14c-.097 0-.188-.05-.272-.154a2.93 2.93 0 0 1-.282-.442 1.069 1.069 0 0 0-.323-.377.68.68 0 0 0-.382-.117c-.214 0-.442.089-.685.266a3.975 3.975 0 0 0-.721.703 7.702 7.702 0 0 0-.685.998c-.219.374-.412.758-.58 1.15-.168.393-.301.78-.4 1.161-.1.382-.15.725-.15 1.028 0 .102.007.206.021.312.014.107.04.204.078.29.038.088.09.159.156.215a.37.37 0 0 0 .25.084.841.841 0 0 0 .384-.114c.144-.076.292-.175.447-.298a5.61 5.61 0 0 0 .465-.418 7.424 7.424 0 0 0 .792-.93c.104-.147.182-.274.234-.383l.426-1.275a.6.6 0 0 1 .204-.293.45.45 0 0 1 .258-.087.4.4 0 0 1 .129.022c.042.014.08.037.114.068.034.03.06.07.08.12a.45.45 0 0 1 .03.17c0 .174-.015.336-.046.488-.03.152-.07.3-.117.445-.047.145-.1.29-.158.437-.058.146-.114.3-.169.458a1.042 1.042 0 0 0-.066.171 27.13 27.13 0 0 0-.266.847l-.165.548a44.5 44.5 0 0 0-.302 1.033 152.365 152.365 0 0 0-.154.538 1.272 1.272 0 0 1-.192.393.732.732 0 0 1-.151.157.279.279 0 0 1-.17.063c-.098 0-.169-.033-.213-.098-.044-.065-.066-.185-.066-.358v-.076c0-.026.001-.053.004-.081.003-.058.026-.167.07-.326a31.78 31.78 0 0 1 .346-1.164l.184-.578c-.162.181-.337.361-.526.54a5.68 5.68 0 0 1-.582.483c-.199.143-.399.26-.6.35a1.42 1.42 0 0 1-.582.136c-.214 0-.398-.047-.552-.141a1.31 1.31 0 0 1-.08-.056l.622 6.529c.162.406 3.214 1.404 7.237 1.404 4.026 0 7.078-1 7.238-1.405l.894-7.761-.215.198a9.381 9.381 0 0 1-.726.616c-.227.172-.45.305-.667.399a1.729 1.729 0 0 1-.696.14c-.232 0-.411-.05-.538-.151a.505.505 0 0 1-.19-.418v-.04a.985.985 0 0 1 .147-.42 4.29 4.29 0 0 1 .297-.44c.116-.153.24-.306.371-.462.131-.155.253-.303.364-.442.112-.14.204-.267.277-.383.074-.115.11-.21.11-.282a.128.128 0 0 0-.045-.103c-.031-.025-.081-.038-.151-.038a.86.86 0 0 0-.378.095c-.13.063-.259.149-.385.255-.127.107-.25.23-.371.366a5.405 5.405 0 0 0-.628.877 6.279 6.279 0 0 0-.3.583c-.034.072-.07.154-.11.244l-.126.28c-.044.095-.085.186-.121.27l-.099.229-.062.138c-.015.033-.04.094-.075.184l-.121.318a221.615 221.615 0 0 0-.404 1.077c-.033.09-.055.152-.064.184-.03.094-.066.183-.107.266a1.096 1.096 0 0 1-.142.22.65.65 0 0 1-.184.152.468.468 0 0 1-.23.057c-.111 0-.202-.027-.274-.079-.071-.052-.107-.153-.107-.301 0-.072.009-.146.027-.222.019-.076.042-.151.07-.226.027-.074.055-.146.084-.217a6.91 6.91 0 0 0 .08-.203c.165-.362.333-.724.504-1.088.17-.363.335-.723.492-1.08l.095-.22-.028.028a6.07 6.07 0 0 1-.594.507 3.144 3.144 0 0 1-.586.35c-.194.087-.382.13-.566.13a.73.73 0 0 1-.313-.06.523.523 0 0 1-.202-.162.65.65 0 0 1-.108-.244c-.007-.032-.011-.066-.016-.1a3.287 3.287 0 0 1-.721.444 1.237 1.237 0 0 1-.495.122.468.468 0 0 1-.357-.146c-.092-.098-.137-.264-.137-.5 0-.166.024-.36.073-.58-.08.141-.179.284-.298.429-.12.144-.255.276-.408.396-.153.12-.323.216-.513.29-.19.074-.395.111-.618.111-.1 0-.198-.013-.291-.038a.61.61 0 0 1-.415-.377 1.019 1.019 0 0 1-.064-.388l.019-.165c.012-.107.05-.275.117-.505.065-.23.167-.527.304-.892.138-.366.331-.809.582-1.33a.733.733 0 0 1 .222-.295.46.46 0 0 1 .534-.011c.04.027.071.061.096.103a.28.28 0 0 1 .037.144c0 .036-.005.07-.014.103a1.236 1.236 0 0 1-.099.241c-.05.1-.109.214-.176.342-.067.128-.138.267-.213.415a5.907 5.907 0 0 0-.208.461c-.065.16-.12.321-.165.486a2.092 2.092 0 0 0-.078.48c0 .065.015.125.046.18.03.053.08.08.15.08a.957.957 0 0 0 .569-.195c.18-.13.346-.292.499-.486.153-.193.29-.401.415-.623.123-.223.226-.426.309-.61.058-.124.109-.256.153-.397a3.93 3.93 0 0 1 .144-.39c.052-.12.112-.22.18-.299a.316.316 0 0 1 .251-.12c.11 0 .197.042.261.125a.475.475 0 0 1 .096.299.85.85 0 0 1-.061.268 7.615 7.615 0 0 1-.156.391c-.063.147-.13.303-.204.47a8.249 8.249 0 0 0-.204.507c-.063.172-.114.34-.156.504a1.89 1.89 0 0 0-.061.459c0 .13.067.195.201.195a.878.878 0 0 0 .353-.098c.14-.065.288-.156.442-.274l.116-.092c.043-.177.093-.341.152-.49.107-.283.215-.563.325-.842.11-.278.21-.533.303-.765l1.387-3.5a.587.587 0 0 1 .222-.298.53.53 0 0 1 .282-.087c.095 0 .181.031.259.093.078.061.117.16.117.298a.612.612 0 0 1-.04.206c-.025.073-.058.15-.098.233a90.44 90.44 0 0 0-.983 2.33l-.37.915a111.369 111.369 0 0 0-.612 1.535c-.033.084-.066.18-.098.29-.032.111-.048.21-.048.297 0 .054.009.097.027.13.019.032.054.049.106.049a.592.592 0 0 0 .24-.068c.096-.045.2-.105.312-.18.111-.073.227-.158.348-.254a10.757 10.757 0 0 0 .992-.893.205.205 0 0 1 .07-.046c.052-.154.098-.305.14-.453.024-.065.058-.157.1-.277.043-.12.093-.237.147-.352a1.51 1.51 0 0 1 .186-.302c.069-.084.143-.127.222-.127.122 0 .21.028.266.084.055.056.082.139.082.247a.9.9 0 0 1-.009.103 3.537 3.537 0 0 1-.053.299.678.678 0 0 1-.03.103c.114-.123.236-.245.367-.366.131-.122.267-.231.408-.329.14-.098.284-.177.43-.239a1.065 1.065 0 0 1 .74-.049c.1.03.188.072.266.128a.666.666 0 0 1 .19.212.583.583 0 0 1 .073.295c0 .149-.037.307-.112.475a3.434 3.434 0 0 1-.282.507c-.113.17-.235.336-.366.497-.131.16-.254.307-.369.44-.114.131-.21.243-.289.336-.077.092-.118.154-.12.187 0 .043.013.078.04.106.028.027.074.04.138.04a.528.528 0 0 0 .229-.086c.1-.058.242-.159.424-.302.181-.142.412-.334.691-.575.192-.165.416-.361.669-.585l1.212-11.22a3.038 3.038 0 0 1-.518.215c-.502.166-1.21.313-2.104.438Zm-6.756-2.662c-5.238 0-9.484.586-9.484 1.308 0 .723 4.246 1.308 9.484 1.308 5.237 0 9.483-.585 9.483-1.308 0-.722-4.246-1.308-9.483-1.308Zm3.786 1.69c0 .17-.504.307-1.127.307-.622 0-1.127-.137-1.127-.307 0-.17.505-.307 1.127-.307.623 0 1.127.138 1.127.307Z"
+          />
+          <path
+            class="color-svg"
+            d="M11.87 10.852a.05.05 0 0 0-.009.027c0 .11.406.199.907.199s.908-.09.908-.2l1.185-4.804L19.573 1.1a.17.17 0 0 0 .005-.005c.1-.113-.103-.462-.439-.762s-.698-.4-.811-.286l-.002.002-5.029 5.291-1.427 5.513Z"
+          />
+        </svg>
+      </div>
+      <span class="stack-skills__text">gulp</span>
+    </div>
+    <div class="stack-skills__item">
+      <div class="stack-skills__icon">
+        <svg width="26" height="39" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            class="color-svg"
+            opacity=".8"
+            d="M6.545 38.375c3.45 0 6.25-2.8 6.25-6.25v-6.25h-6.25c-3.45 0-6.25 2.8-6.25 6.25s2.8 6.25 6.25 6.25Z"
+          />
+          <path
+            class="color-svg"
+            opacity=".5"
+            d="M.295 19.625c0-3.45 2.8-6.25 6.25-6.25h6.25v12.5h-6.25c-3.45 0-6.25-2.8-6.25-6.25Z"
+          />
+          <path class="color-svg" d="M.295 7.125c0-3.45 2.8-6.25 6.25-6.25h6.25v12.5h-6.25c-3.45 0-6.25-2.8-6.25-6.25Z" />
+          <path class="color-svg" opacity=".5" d="M12.795.875h6.25c3.45 0 6.25 2.8 6.25 6.25s-2.8 6.25-6.25 6.25h-6.25V.875Z" />
+          <path
+            class="color-svg"
+            opacity=".8"
+            d="M25.295 19.625c0 3.45-2.8 6.25-6.25 6.25s-6.25-2.8-6.25-6.25 2.8-6.25 6.25-6.25 6.25 2.8 6.25 6.25Z"
+          />
+        </svg>
+      </div>
+      <span class="stack-skills__text">figma</span>
+    </div>
+  </div>
+  <p class="skills__text">Понимаю английский на достаточном уровне для чтения документации.</p>
+  <p class="skills__text">Верстаю из Figma и Adobe Photoshop. Усидчивый и внимательный к мелочам.</p>
+</section>
+ <section class="main-page__about about">
+  <h2 class="about__title __h2" id="about">Обо мне</h2>
+  <p class="about__text">
+    В 2017 году, получил среднее-специальное образование по профессии техник по обслуживанию и ремонту автотранспорта. В 2020 году
+    стал руководителем отдела техобслуживания.
+  </p>
+  <p class="about__text">
+    В октябре 2021 года решил сменить профессию на то, чем увлекался в детстве и хотел посвятить себя. Сейчас заочно получаю
+    высшее образование по специальности «Информационные технологии, Frontend Developer».
+  </p>
+  <p class="about__text">
+    Мотоциклы, путешествия и элементы сталкинга (обожаю заброшки с интересной историей и потрясающей аурой), качалка (я про
+    тренажерный зал) — это всё про меня.
+  </p>
+  <p class="about__text">Полон решительности, энергии и желания развиваться!</p>
+</section>
+
+        <section class="main-page__experience experience">
+  <h2 class="experience__title __h2" id="experience">Опыт работы и курсы</h2>
+  <div class="experience__item item-experience">
+    <h3 class="item-experience__title item-experience__title--work">Frontend-dev at AIC</h3>
+    <time class="item-experience__date">Март 2022 — настоящее время</time>
+    <p class="item-experience__text">
+      В мои обязанности входит вёрстка лендингов, интернет-магазинов, соблюдение макетов, анимация интерфейса и поддержка
+      проектов.
+    </p>
+  </div>
+  <div class="experience__item item-experience">
+    <h3 class="item-experience__title">Курсы HTML Academy</h3>
+    <time class="item-experience__date">ЯНВАРЬ 2022</time>
+    <p class="item-experience__text">Базовый курс по HTML/CSS в HTML Academy помог быстро начать в врёстке и запустил карьеру.</p>
+  </div>
+  <div class="experience__item item-experience">
+    <h3 class="item-experience__title">Информационные технологии, Frontend Developer</h3>
+    <time class="item-experience__date">2021-2022</time>
+  </div>
+</section>
+ <section class="main-page__projects projects">
+  <h2 class="projects__title __h2" id="projects">Проекты</h2>
+
+  <div class="projects__item item-projects">
+    <div class="item-projects__info">
+      <h3 class="item-projects__title">Device</h3>
+      <div class="item-projects__tegs">
+        <time class="item-projects__date">2022</time>
+        <span class="item-projects__type">ecommerce</span>
+      </div>
+    </div>
+
+    <div class="item-projects__slider">
+      <div class="swiper-wrapper __swiper">
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/device/device.jpg" alt="Site Device." />
+          </div>
+        </div>
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/device/device2.jpg" alt="Site Device." />
+          </div>
+        </div>
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/device/device3.jpg" alt="Site Device." />
+          </div>
+        </div>
+      </div>
+      <div class="item-projects__pagination"></div>
+    </div>
+
+    <div class="item-projects__links">
+      <a class="item-projects__link" href="#">[Смотреть проект]</a>
+      <a class="item-projects__link" href="#">[Код проекта]</a>
+    </div>
+
+    <p class="item-projects__text">
+      Персональный, образовательный проект по верстке фиксированного, многостраничного сайта. Макет предоставлен HTML-Academy.
+      Проект был досрочно сдан и выполнены, не предусмотренные курсом, функциональные решения.
+    </p>
+  </div>
+
+  <div class="projects__item item-projects">
+    <div class="item-projects__info">
+      <h3 class="item-projects__title">Bicycle</h3>
+      <div class="item-projects__tegs">
+        <time class="item-projects__date">2022</time>
+        <span class="item-projects__type">promo-page</span>
+      </div>
+    </div>
+
+    <div class="item-projects__slider">
+      <div class="swiper-wrapper __swiper">
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/bicycle/bicycle.jpg" alt="Site Bicycle." />
+          </div>
+        </div>
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/bicycle/bicycle.jpg" alt="Site Bicycle." />
+          </div>
+        </div>
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/bicycle/bicycle.jpg" alt="Site Bicycle." />
+          </div>
+        </div>
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/bicycle/bicycle.jpg" alt="Site Bicycle." />
+          </div>
+        </div>
+      </div>
+      <div class="item-projects__pagination"></div>
+    </div>
+
+    <div class="item-projects__links">
+      <a class="item-projects__link" href="#">[Смотреть проект]</a>
+      <a class="item-projects__link" href="#">[Код проекта]</a>
+    </div>
+
+    <p class="item-projects__text">Личный, проект по верстке адаптивного сайта. Макет из свободного доступа.</p>
+  </div>
+
+  <div class="projects__item item-projects">
+    <div class="item-projects__info">
+      <h3 class="item-projects__title">Furniture shop</h3>
+      <div class="item-projects__tegs">
+        <time class="item-projects__date">2022</time>
+        <span class="item-projects__type">store-market</span>
+      </div>
+    </div>
+
+    <div class="item-projects__slider">
+      <div class="swiper-wrapper __swiper">
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/furniture-shop/furniture-shop-2.jpg" alt="Site furniture shop." />
+          </div>
+        </div>
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/furniture-shop/furniture-shop-3.png" alt="Site furniture shop." />
+          </div>
+        </div>
+        <div class="item-projects__slide">
+          <div class="item-projects__img __ibg">
+            <img src="img/projects/furniture-shop/furniture-shop.jpg" alt="Site furniture shop." />
+          </div>
+        </div>
+      </div>
+      <div class="item-projects__pagination"></div>
+    </div>
+
+    <div class="item-projects__links">
+      <a class="item-projects__link" href="#">[Смотреть проект]</a>
+      <a class="item-projects__link" href="#">[Код проекта]</a>
+    </div>
+
+    <p class="item-projects__text">
+      Личный, проект по верстке адаптивного сайта интернет магазина. Рабочий функционал добавления товара в корзину, слайдеры.
+      Макет из свободного доступа.
+    </p>
+  </div>
+
+  <a class="projects__link" href="#">Все проекты</a>
+</section>
+ <footer class="footer">
+  <div class="footer__container">
+    <div class="footer__copy">© 2022 Nikolay Konkin</div>
+  </div>
+</footer>
+
+      </main>
+      <aside class="menu">
+  <div class="menu__container">
+    <div class="menu__body">
+      <div class="menu__column-info">
+        <nav class="menu__nav">
+          <ul class="menu__list">
+            <li>
+              <a class="menu__logo menu__link __link--active" href="#home" data-da=".menu__container, 991.98,first">nialko.ru</a>
+            </li>
+            <li><a class="menu__link" href="#skills">Навыки</a></li>
+            <li><a class="menu__link" href="#about">обо мне</a></li>
+            <li><a class="menu__link" href="#experience">опыт</a></li>
+            <li><a class="menu__link" href="#projects">проекты</a></li>
+          </ul>
+        </nav>
+
+        <ul class="menu__list menu__contacts">
+          <li><a class="menu__link" href="#">email</a></li>
+          <li><a class="menu__link" href="#">Instagram</a></li>
+          <li><a class="menu__link" href="#">Telegram</a></li>
+          <li><a class="menu__link" href="#">GitHub</a></li>
+        </ul>
+        <a class="menu__link menu__link--download" href="files/CV_Konkin_Nikolai_Alexandrovich.pdf" target="_blank" download>
+          [Скачать резюме]
+          <span>PDF/351KB</span>
+        </a>
+      </div>
+
+      <div class="menu__column-controls">
+        <ul class="menu__theme menu__list">
+          <li><a class="menu__link menu__link--active" href="#">Dark</a></li>
+          <li><a class="menu__link" href="#">Light</a></li>
+          <li><a class="menu__link" href="#">Contrast</a></li>
+        </ul>
+
+        <ul class="menu__lang menu__list">
+          <li><a class="menu__link menu__link--active" href="#">ru</a></li>
+          <span>/</span>
+          <li><a class="menu__link" href="#">en</a></li>
+        </ul>
+      </div>
+    </div>
+    <button class="menu__icon icon-menu" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</aside>
+ <script src="js/app.min.js"></script>
+
+    </div>
+  </body>
+</html>
