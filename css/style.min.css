@@ -156,6 +156,7 @@ button {
 }
 
 body {
+  position: relative;
   color: var(--text);
   background-color: var(--bg);
 }
@@ -164,18 +165,17 @@ body {
     content: "";
     position: absolute;
     z-index: 20;
-    width: 0;
-    height: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
     background-color: var(--bg-backdrop);
     transition: all 0.6s ease-in-out;
   }
   body.__lock {
-    position: relative;
     overflow: hidden;
   }
   body.__lock::before {
-    width: 100%;
-    height: 100%;
+    opacity: 1;
   }
 }
 
@@ -246,7 +246,7 @@ body {
 .__link--active::before {
   content: "";
   position: absolute;
-  top: 3px;
+  top: 11px;
   left: -16px;
   width: 0;
   height: 0;
@@ -394,6 +394,34 @@ body {
     opacity: 0;
   }
 }
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 150%, 0) scaleY(5);
+    transform: translate3d(0, 150%, 0) scaleY(5);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0) scaleY(0.9);
+    transform: translate3d(0, -20px, 0) scaleY(0.9);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0) scaleY(0.95);
+    transform: translate3d(0, 10px, 0) scaleY(0.95);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0) scaleY(0.985);
+    transform: translate3d(0, -5px, 0) scaleY(0.985);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
 @keyframes slide-progress {
   0% {
     transform: translateX(-100%);
@@ -422,6 +450,7 @@ body {
 }
 .menu.__active .menu__body {
   transform: translateY(0);
+  animation: bounceInUp 0.8s ease-in-out;
 }
 .menu__container {
   position: relative;
@@ -455,7 +484,7 @@ body {
 .menu__body {
   position: absolute;
   display: flex;
-  padding: 32px 47px 0px 16px;
+  padding: 32px 40px 32px 16px;
   bottom: 44px;
   left: 0;
   width: 100%;
@@ -463,6 +492,7 @@ body {
   overflow: auto;
   transform: translateY(150%);
   transition: transform 0.6s ease-in-out;
+  border-bottom: 1px solid #282c34;
 }
 @media (min-width: 991.98px) {
   .menu__body {
@@ -480,16 +510,32 @@ body {
   flex-direction: column;
 }
 .menu__column-info {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .menu__column-info > :not(:last-child) {
-  margin-bottom: 32px;
-  margin-right: 24px;
+  margin-right: auto;
+  padding-right: 24px;
+}
+@media (min-width: 991.98px) {
+  .menu__column-info {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+  .menu__column-info > :not(:last-child) {
+    margin-bottom: 32px;
+    padding-right: 0;
+  }
+}
+.menu__column-controls {
+  margin-left: 32px;
 }
 @media (min-width: 991.98px) {
   .menu__column-controls {
     flex-direction: row;
     justify-content: space-between;
+    margin-left: 0;
   }
 }
 .menu__nav li:first-child {
@@ -500,19 +546,11 @@ body {
     display: inline-block;
   }
 }
-.menu__list li:not(:last-child) {
-  margin-bottom: 16px;
-}
-@media (min-width: 991.98px) {
-  .menu__list li:not(:last-child) {
-    margin-bottom: 12px;
-  }
-}
 .menu__link {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 0.8125rem;
-  line-height: 1.23;
+  line-height: 2.46;
   color: var(--alfa5-text);
   transition: color 0.3s ease-in-out, opacity 0.1s linear;
 }
@@ -525,19 +563,21 @@ body {
   opacity: 0.3;
 }
 .menu__link--download {
+  white-space: nowrap;
+  margin: auto auto 10px 0;
   max-width: 125px;
-  padding: 10px 0;
   color: var(--base-white);
 }
 .menu__link--download span {
+  line-height: 1;
   display: none;
+  color: var(--alfa5-text);
 }
 @media (min-width: 991.98px) {
   .menu__link--download span {
     display: block;
     opacity: 0;
     visibility: hidden;
-    color: var(--alfa5-text);
     transition: all 0.3s ease-in-out;
   }
 }
@@ -548,6 +588,12 @@ body {
   .menu__link--download:hover span {
     opacity: 1;
     visibility: visible;
+  }
+}
+@media (min-width: 991.98px) {
+  .menu__link--download {
+    padding: 10px 0;
+    margin: 0 0 auto 0;
   }
 }
 .menu__link.__link--active {
@@ -577,8 +623,11 @@ body {
   margin-top: auto;
   display: flex;
 }
+.menu__lang a {
+  line-height: 1;
+}
 .menu__lang li {
-  margin-bottom: 8px !important;
+  margin-bottom: 10px !important;
 }
 .menu__lang span {
   padding: 0 5px;
@@ -639,7 +688,7 @@ body {
   border-radius: 50%;
   background-color: var(--base-purple);
   margin-right: 8px;
-  animation: flash 1.9s ease-in-out infinite;
+  animation: flash 2.9s ease-in-out infinite;
 }
 
 /*!=================-SKILLS-=================!*/
