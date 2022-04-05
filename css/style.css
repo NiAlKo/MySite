@@ -501,6 +501,8 @@ body {
     background-color: transparent;
     height: 100%;
     overflow: visible;
+    opacity: 1;
+    visibility: visible;
   }
 }
 .menu__column-info, .menu__column-controls {
