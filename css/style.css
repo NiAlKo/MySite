@@ -73,6 +73,7 @@ body {
   --alfa15: rgba(255, 255, 255, 0.15);
   --alfa15-black: rgba(0, 0, 0, 0.15);
   --alfa2: rgba(255, 255, 255, 0.2);
+  --alfa2-black: rgba(0, 0, 0, 0.2);
   --alfa25: rgba(255, 255, 255, 0.25);
   --alfa25-black: rgba(0, 0, 0, 0.25);
   --alfa4: rgba(255, 255, 255, 0.4);
@@ -735,7 +736,7 @@ body.theme-contrast {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 0.8125rem;
-  line-height: 1.85;
+  line-height: 2.46;
   color: var(--alfa4-text);
   transition: color 0.05s ease-out, opacity 0.1s ease-in-out;
 }
@@ -811,6 +812,9 @@ body.theme-contrast {
   }
 }
 @media (min-width: 991.98px) {
+  .menu__link {
+    line-height: 1.85;
+  }
   .theme-light .menu__link {
     color: var(--alfa4-black);
   }
@@ -852,6 +856,11 @@ body.theme-contrast {
 .menu__lang span {
   padding: 0 5px;
   color: var(--alfa2);
+}
+@media (min-width: 991.98px) {
+  .theme-light .menu__lang span {
+    color: var(--alfa2-black);
+  }
 }
 .menu__lang .menu__link--active {
   pointer-events: none;
@@ -1039,7 +1048,7 @@ body.theme-contrast {
 .item-experience__title::before {
   content: "";
   position: absolute;
-  top: 3.5px;
+  top: 0px;
   left: -28px;
   width: 12px;
   height: 20px;
@@ -1049,6 +1058,11 @@ body.theme-contrast {
 }
 .theme-light .item-experience__title::before {
   background-image: linear-gradient(45deg, var(--base-black) 25%, transparent 0, transparent 75%, var(--base-black) 0), linear-gradient(45deg, var(--base-black) 25%, transparent 0, transparent 75%, var(--base-black) 0);
+}
+@media (min-width: 767.98px) {
+  .item-experience__title::before {
+    top: 3.5px;
+  }
 }
 .item-experience__title--work {
   color: var(--base-purple);
@@ -1091,7 +1105,12 @@ body.theme-contrast {
   color: var(--alfa4-text);
 }
 .item-experience__date:not(:last-child) {
-  margin-bottom: 28px;
+  margin-bottom: 8px;
+}
+@media (min-width: 991.98px) {
+  .item-experience__date:not(:last-child) {
+    margin-bottom: 28px;
+  }
 }
 /*!=================-PROJECTS-=================!*/
 .projects__title {
@@ -1329,7 +1348,7 @@ body.theme-contrast {
   border-color: var(--base-orange);
 }
 .theme-light .contacts__link {
-  border-color: var(--base-crimson);
+  border-color: var(--base-violet);
 }
 .theme-contrast .contacts__link {
   border-color: var(--contrast-purple);
@@ -1365,6 +1384,9 @@ body.theme-contrast {
 
 .theme-menu-contacts__list {
   display: inline-flex;
+}
+.theme-light .theme-menu-contacts__list li a {
+  color: var(--text-black);
 }
 .theme-menu-contacts__list li:not(:last-child) {
   margin-right: 24px;
