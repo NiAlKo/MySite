@@ -1,0 +1,18 @@
+/**======================-FOOTER-=================*/
+.footer {
+  padding-bottom: 104px;
+  @media (min-width: ($md2 + px)) {
+    padding-bottom: 24px;
+  }
+  &__container {
+  }
+
+  &__copy {
+    font-weight: 400;
+    font-size: rem(13);
+    line-height: 1.23;
+    text-transform: uppercase;
+    color: var(--alfa4-text);
+    @include theme("light", "color", var(--alfa4-black));
+  }
+}

@@ -1,0 +1,38 @@
+/*!=================-GREETING-=================!*/
+.greeting {
+  @include adaptive-value("padding-top", 48, 40, 1);
+  @include adaptive-value("padding-bottom", 72, 48, 1);
+  & > :not(:last-child) {
+    margin-bottom: 24px;
+  }
+  &__title {
+    font-weight: 500;
+    @include adaptive-value("font-size", 36, 28, 1);
+    line-height: 1.33;
+    letter-spacing: -0.02em;
+    // color: var(--base-white);
+    @include theme("default", "color", var(--base-white));
+    @include theme("light", "color", var(--base-black));
+    @include theme("contrast", "color", var(--base-white));
+  }
+  &__job {
+    display: inline-flex;
+    align-items: baseline;
+    // color: var(--base-purple);
+    @include theme("default", "color", var(--base-purple));
+    @include theme("light", "color", var(--base-crimson));
+    @include theme("contrast", "color", var(--base-blue));
+    &::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      // background-color: var(--base-purple);
+      @include theme("default", "background-color", var(--base-purple));
+      @include theme("light", "background-color", var(--base-crimson));
+      @include theme("contrast", "background-color", var(--base-blue));
+      margin-right: 8px;
+      animation: flash 2.9s ease-in-out infinite;
+    }
+  }
+}

@@ -1,0 +1,270 @@
+/**======================-MENU-=================*/
+.menu {
+  position: fixed;
+  bottom: 24px;
+  left: 0;
+  z-index: 60;
+  width: 100%;
+  @media (min-width: ($md2 + px)) {
+    position: static;
+    width: auto;
+  }
+  &.__active {
+    .menu__body {
+      // transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      animation: bounceInUp 0.8s ease-in-out;
+    }
+    // background-color: var(--bg-backdrop);
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 24px;
+    height: 48px;
+    background-color: var(--bg-mob_menu);
+
+    @media (min-width: ($md2 + px)) {
+      position: fixed;
+      right: 0;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      width: 224px;
+      background-color: transparent;
+      padding: 48px 56px 24px 24px;
+      margin: 0;
+    }
+
+    @media (min-width: 1980px) {
+      right: 10%;
+    }
+  }
+
+  &__logo {
+  }
+
+  &__body {
+    position: absolute;
+    display: flex;
+    padding: 32px 40px 32px 16px;
+    bottom: 44px;
+    left: 0;
+    width: 100%;
+    // height: 280px;
+    background-color: var(--bg-mob_menu);
+    overflow: auto;
+    // transform: translateY(150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.37s ease-in 0.2s;
+    border-bottom: 1px solid #282c34;
+    @media (min-width: ($md2 + px)) {
+      position: static;
+      padding: 0;
+      flex-direction: column;
+      background-color: transparent;
+      height: 100%;
+      overflow: visible;
+      // transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      border-bottom: none;
+    }
+    &.__mobail .menu__link--download {
+      @include theme("default", "color", var(--base-orange));
+      @include theme("light", "color", var(--base-violet));
+      @include theme("contrast", "color", var(--contrast-purple));
+      span {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        @media (min-width: ($md2 + px)) {
+          @include theme("light", "color", var(--alfa4-black));
+        }
+      }
+    }
+  }
+
+  &__column-info,
+  &__column-controls {
+    display: flex;
+    flex-direction: column;
+  }
+  &__column-info {
+    flex: 1 1 auto;
+    & > :not(:last-child) {
+      // margin-bottom: 10px;
+      // margin-right: auto;
+      padding-right: 24px;
+    }
+    flex-direction: row;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    @media (min-width: ($md2 + px)) {
+      flex-direction: column;
+      justify-content: stretch;
+      & > :not(:last-child) {
+        // margin-right: 24px;
+        margin-bottom: 24px;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__column-controls {
+    margin-left: 32px;
+    @media (min-width: ($md2 + px)) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 0;
+    }
+  }
+  &__nav {
+    li:first-child {
+      display: none;
+    }
+    @media (min-width: ($md2 + px)) {
+      li:first-child {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__list {
+    li {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: rem(13);
+    line-height: 2.46;
+
+    color: var(--alfa4-text);
+    @include theme("contrast", "color", var(--alfa5-text));
+    transition: color 0.05s ease-out, opacity 0.1s ease-in-out;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--base-white);
+        @include theme("light", "color", var(--base-black));
+      }
+    }
+    &:active {
+      opacity: 0.3;
+    }
+
+    &.menu__link--download {
+      white-space: nowrap;
+      margin: auto auto 15px 0;
+      max-width: 125px;
+      color: var(--base-white);
+      @include theme("light", "color", var(--base-black));
+      span {
+        line-height: 1;
+        display: none;
+        color: var(--alfa4-text);
+        @include theme("contrast", "color", var(--alfa5-text));
+        @media (min-width: ($md2 + px)) {
+          display: block;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          // color: var(--base-orange);
+          @include theme("default", "color", var(--base-orange));
+          @include theme("light", "color", var(--base-violet));
+          @include theme("contrast", "color", var(--contrast-purple));
+          span {
+            opacity: 1;
+            visibility: visible;
+            @include theme("light", "color", var(--alfa4-black));
+          }
+        }
+      }
+      @media (min-width: ($md2 + px)) {
+        padding: 10px 0;
+        margin: 0 0 auto 0;
+      }
+    }
+
+    &.__link--active {
+      margin-left: 16px;
+      @media (min-width: ($md2 + px)) {
+        margin-left: 0;
+      }
+    }
+    @media (min-width: ($md2 + px)) {
+      line-height: 1.85;
+      @include theme("light", "color", var(--alfa4-black));
+    }
+  }
+  &__contacts,
+  &__theme {
+    @media (any-hover: hover) {
+      & .menu__link:hover {
+        // color: var(--base-purple);
+        @include theme("default", "color", var(--base-purple));
+        @include theme("light", "color", var(--base-crimson));
+        @include theme("contrast", "color", var(--base-blue));
+      }
+    }
+  }
+
+  &__theme {
+    .menu__link--active {
+      // color: var(--base-purple);
+      @include theme("default", "color", var(--base-purple));
+      @include theme("light", "color", var(--base-crimson));
+      @include theme("contrast", "color", var(--base-blue));
+      pointer-events: none;
+    }
+    @media (min-width: ($md2 + px)) {
+      .menu__list {
+        margin: 0;
+      }
+    }
+  }
+
+  &__lang {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    li {
+    }
+    span {
+      padding: 0 5px;
+      color: var(--alfa2);
+      @media (min-width: ($md2 + px)) {
+        @include theme("light", "color", var(--alfa2-black));
+      }
+    }
+    .menu__link--active {
+      // color: var(--base-orange);
+      @include theme("default", "color", var(--base-orange));
+      @include theme("light", "color", var(--base-violet));
+      @include theme("contrast", "color", var(--contrast-purple));
+      pointer-events: none;
+    }
+    @media (min-width: ($md2 + px)) {
+      margin-bottom: auto;
+      margin-top: 0;
+    }
+  }
+
+  &__icon {
+  }
+}

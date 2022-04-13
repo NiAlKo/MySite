@@ -1,0 +1,168 @@
+/*!=================-PROJECTS-=================!*/
+.projects {
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    & > * {
+      @include adaptive-value("margin-bottom", 72, 48, 1);
+    }
+  }
+
+  &__link {
+    // color: var(--base-purple);
+    @include theme("default", "color", var(--base-purple));
+    @include theme("light", "color", var(--base-crimson));
+    @include theme("contrast", "color", var(--base-blue));
+    // border-color: var(--base-purple);
+    @include theme("default", "border-color", var(--base-purple));
+    @include theme("light", "border-color", var(--base-crimson));
+    @include theme("contrast", "border-color", var(--base-blue));
+    &::after,
+    &::before {
+      // background-image: linear-gradient(to left, transparent 40%, var(--base-purple) 40%);
+      @include theme("default", "background-image", linear-gradient(to left, transparent 40%, var(--base-purple) 40%));
+      @include theme("light", "background-image", linear-gradient(to left, transparent 40%, var(--base-crimson) 40%));
+      @include theme("contrast", "background-image", linear-gradient(to left, transparent 40%, var(--base-blue) 40%));
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        span {
+          // background-color: var(--base-purple);
+          @include theme("default", "background-color", var(--base-purple));
+          @include theme("light", "background-color", var(--base-crimson));
+          @include theme("contrast", "background-color", var(--base-blue));
+        }
+      }
+    }
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+.item-projects {
+  & > :not(:last-child) {
+    margin-bottom: 8px;
+  }
+  &__info {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-weight: 400;
+    margin-right: 8px;
+    color: var(--base-white);
+    @include theme("light", "color", var(--base-black));
+  }
+  &__tegs {
+    display: flex;
+    align-items: center;
+    & > :not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+  &__date,
+  &__type {
+    position: relative;
+    font-size: rem(13);
+    line-height: 1.23;
+    text-transform: uppercase;
+    padding: 1px 6px 3px 6px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--alfa1);
+      @include theme("light", "background-color", var(--alfa1-black));
+    }
+  }
+
+  &__slider {
+    margin-bottom: 16px !important;
+    @media (max-width: ($md4 + px)) {
+      margin: 0 -24px;
+    }
+  }
+
+  &__slide {
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    padding-bottom: 60%;
+    margin-bottom: 8px;
+  }
+
+  &__pagination {
+    display: flex;
+    width: 100%;
+    @media (max-width: ($md4 + px)) {
+      padding: 0 24px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    & > :not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-size: 13px;
+    line-height: 1.23;
+    text-transform: uppercase;
+    color: var(--base-white);
+    @include theme("light", "color", var(--base-black));
+    transition: all 0.2s ease-in-out;
+    &:first-child {
+      // color: var(--base-orange);
+      @include theme("default", "color", var(--base-orange));
+      @include theme("light", "color", var(--base-violet));
+      @include theme("contrast", "color", var(--contrast-purple));
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &:first-child {
+          color: var(--base-white);
+        }
+        // color: var(--bg);
+        @include theme("default", "color", var(--bg));
+        @include theme("light", "color", var(--base-white));
+        @include theme("contrast", "color", var(--base-black));
+      }
+      &:hover::before {
+        background-color: var(--base-white);
+        @include theme("light", "background-color", var(--base-black));
+      }
+      &:first-child:hover::before {
+        @include theme("default", "background-color", var(--base-orange));
+        @include theme("light", "background-color", var(--base-violet));
+        @include theme("contrast", "background-color", var(--contrast-purple));
+        // background-color: var(--base-orange);
+      }
+    }
+    &:active {
+      opacity: 0.6;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 105%;
+      top: 1px;
+      z-index: -1;
+    }
+  }
+  &__text {
+  }
+}

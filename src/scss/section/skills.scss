@@ -1,0 +1,43 @@
+/*!=================-SKILLS-=================!*/
+
+.skills {
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 144px);
+    row-gap: 24px;
+    justify-content: space-between;
+  }
+}
+
+.stack-skills {
+  &__item {
+    display: flex;
+    align-items: center;
+    path[class="color-svg"] {
+      // fill: var(--base-purple);
+      @include theme("default", "fill", var(--base-purple));
+      @include theme("light", "fill", var(--base-crimson));
+      @include theme("contrast", "fill", var(--base-blue));
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    width: 48px;
+    height: 48px;
+    background: url(../img/icons/bg-skill.svg) no-repeat center;
+    @include theme("light", "background", url(../img/icons/bg-skill-black.svg) no-repeat center);
+  }
+
+  &__text {
+  }
+}

@@ -1,0 +1,131 @@
+//**======================-ПЕРЕМЕННЫЕ-=================*/
+
+$min-width: 320px;
+$max-width: 1920;
+$maxWidthContainer: 672;
+
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+// /**======================-МИКСИНЫ-=================*/
+
+@import "./base/settings";
+
+/**======================-ШРИФТЫ-=================*/
+@import "./base/fonts";
+
+// /**======================-ШРИФТЫ_ПО_УМОЛЧАНИЮ-=================*/
+@import "./base/typography";
+$font-family: "SourceCodePro", sans-serif;
+//**======================-ПАЛИТРА-=================*/
+@import "./base/colors";
+
+//**======================-ОБНУЛЕНИЕ, ОБЩИЕ_ПАРАМЕТРЫ-=================*/
+@import "./base/reset";
+body {
+  position: relative;
+  @extend %all-text;
+  color: var(--text);
+  @include themeWith("default", "color", var(--text));
+  @include themeWith("light", "color", var(--text-black));
+  @include themeWith("contrast", "color", var(--text));
+  background-color: var(--bg);
+  @include themeWith("default", "background-color", var(--bg));
+  @include themeWith("light", "background-color", var(--base-white));
+  @include themeWith("contrast", "background-color", var(--base-black));
+  @media (max-width: ($md2 + px)) {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-backdrop);
+      transition: all 0.6s ease-in-out;
+    }
+    &.__lock {
+      overflow: hidden;
+      &::before {
+        z-index: 20;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+//**======================-УПАКОВКА-=================*/
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100%;
+  overflow: hidden;
+  @media (min-width: 1440px) {
+    margin: 0 auto;
+    max-width: $max-width + px;
+  }
+}
+//**======================-ОСНОВНАЯ_СЕТКА-=================*/
+[class*="__container"] {
+  max-width: none;
+  padding: 0 16px;
+  @media (min-width: ($md2 + px)) {
+    padding: 0 32px;
+  }
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  overflow: hidden;
+  @media (min-width: ($md2 + px)) {
+    max-width: 672px;
+  }
+  @media (min-width: 1980px) {
+    max-width: 1024px;
+  }
+  &__greeting {
+  }
+
+  &__skills,
+  &__about {
+    padding-bottom: 72px;
+    & > :not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__about {
+  }
+
+  &__experience {
+    padding-bottom: 72px;
+  }
+
+  &__projects {
+    padding-bottom: 72px;
+    @media (min-width: ($md2 + px)) {
+      padding-bottom: 208px;
+    }
+  }
+}
+.footer {
+  flex: 0 0 auto;
+}
+//**======================-НЕЗАВИСИМЫЕ_БЛОКИ-=================*/
+@import "./base/ui";
+//**======================-ПОДКЛЮЧЕНИЕ_СТИЛЕЙ-=================*/
+@import "./section/header";
+@import "./section/menu";
+@import "./section/greeting";
+@import "./section/skills";
+@import "./section/about";
+@import "./section/experience";
+@import "./section/projects";
+@import "./section/contacts";
+
+@import "./section/footer";
