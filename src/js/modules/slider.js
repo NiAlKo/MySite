@@ -21,13 +21,12 @@ var swiper = new Swiper('.item-projects__slider', {
 	slidesPerView: 1,
 	spaceBetween: 32,
 	watchOverflow: true,
-	speed: 3500,
 	loop: true,
 	loopAdditionalSlides: 5,
 	preloadImages: false,
 	effect: 'fade',
 	fadeEffect:{
-		crossFade: true
+		// crossFade: true
 	},
 	
 	pagination: {

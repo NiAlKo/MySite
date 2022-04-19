@@ -11,6 +11,9 @@
   position: relative;
   padding: 16px 0 16px 28px;
   margin: 0 -16px;
+  & > :not(:last-child) {
+    margin-bottom: 8px;
+  }
   @include adaptive-value("padding-right", 48, 8, 1);
   background-color: var(--extra-light);
   @include theme("default", "background-color", var(--extra-light));
@@ -42,20 +45,17 @@
     background-position: 0 0, 1px 1px;
   }
   &__title {
-    font-size: inherit;
+    font-size: rem(17);
     font-weight: 400;
     position: relative;
     color: var(--base-white);
     @include theme("default", "color", var(--base-white));
     @include theme("light", "color", var(--base-dark));
     @include theme("contrast", "color", var(--base-white));
-    & > :not(:last-child) {
-      margin-bottom: 8px;
-    }
     &::before {
       content: "";
       position: absolute;
-      top: 0px;
+      top: 3.5px;
       left: -28px;
       width: 12px;
       height: 20px;
@@ -71,9 +71,6 @@
       );
       background-size: 2px 2px;
       background-position: 0 0, 1px 1px;
-      @media (min-width: ($md3 + px)) {
-        top: 3.5px;
-      }
     }
 
     &--work {
@@ -121,14 +118,6 @@
     @include theme("default", "color", var(--alfa4-text));
     @include theme("light", "color", var(--alfa4-black));
     @include theme("contrast", "color", var(--alfa4-text));
-    &:not(:last-child) {
-      margin-bottom: 8px;
-    }
-    @media (min-width: ($md2 + px)) {
-      &:not(:last-child) {
-        margin-bottom: 28px;
-      }
-    }
   }
 
   &__text {
