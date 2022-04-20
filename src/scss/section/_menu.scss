@@ -32,8 +32,13 @@
     }
   }
   &.__active {
-    height: calc(100vh - 203px);
+    @media screen and (orientation: portrait) {
+      height: calc(100vh - 203px);
+    }
 
+    @media screen and (orientation: landscape) {
+      height: calc(100vh - 48px);
+    }
     .menu__body {
       // transform: translateY(0);
       // opacity: 1;

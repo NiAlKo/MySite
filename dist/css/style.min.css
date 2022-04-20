@@ -648,8 +648,15 @@ body.theme-contrast {
     display: none;
   }
 }
-.menu.__active {
-  height: calc(100vh - 203px);
+@media screen and (orientation: portrait) {
+  .menu.__active {
+    height: calc(100vh - 203px);
+  }
+}
+@media screen and (orientation: landscape) {
+  .menu.__active {
+    height: calc(100vh - 48px);
+  }
 }
 .menu.__active .menu__body {
   bottom: 48px;
