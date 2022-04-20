@@ -3,12 +3,15 @@ const burger = document.querySelector(".icon-menu");
 const menu = document.querySelector(".menu");
 const menuBody = document.querySelector(".menu__body");
 const body = document.querySelector("body");
-
+const lockBody = document.querySelector("body.__lock");
 burger.addEventListener('click', function(){
 	burger.classList.toggle('__active');
 	menu.classList.toggle('__active');
 	body.classList.toggle('__lock');
-})
+	menuBody.classList.toggle('__active');
+	
+});
+
 
 
 window.addEventListener('scroll', () => {
@@ -28,9 +31,6 @@ if (window.innerWidth > 991.98) {
 		});
 }
 });
-
-let ua = window.navigator.userAgent;
-let msie = ua.indexOf("MSIE ");
 
 // Обнаружение мобильного
 let isMobile = {
@@ -58,84 +58,56 @@ let isMobile = {
 				isMobile.Windows());
 	}
 };
-
-function isIE() {
-	ua = navigator.userAgent;
-	let is_ie = msie > -1 || msie > -1;
-	return is_ie;
-}
-
- if (isIE()){
-	 document.querySelector("html").classList.add("ie");
- }
  
  if(isMobile.any()) {
 	 document.querySelector("html").classList.add("__touch");
 	 menuBody.classList.add("__mobail");
 	 document.querySelector('.__link--active').classList.add("__mobail");
+	 document.querySelectorAll('.menu__nav .menu__link').forEach((el) =>{
+el.classList.add("__mobail");
+	 })
+
+	 document.addEventListener("click", function(evt){
+		if (evt.target.closest(".menu__link.__mobail") || evt.target.matches("body.__lock") ){
+			burger.classList.remove('__active');
+			menu.classList.remove('__active');
+			body.classList.remove('__lock');
+			menuBody.classList.remove('__active');
+		}});
  }
 
+	function setTheme(nameTheme) {
+		body.classList.remove("theme-default");
+		body.classList.remove("theme-light");
+		body.classList.remove("theme-contrast");
 
- window.onload = function () {
-
-// Toggler themes
-		const themMenu = document.querySelectorAll(".menu__theme .menu__link");
-		let theme = "theme-default";
-		themMenu.forEach((element) => {
-				element.addEventListener("click", themMenuActions);
+		body.classList.add("theme-" + nameTheme);
+		const themBtns = document.querySelectorAll(".menu__theme .menu__link");
+		themBtns.forEach((el) => {
+			el.classList.remove("menu__link--active");
+		});
+		
+		const selectedThemeBtns =	document.querySelectorAll(".theme-" + nameTheme + "-link");
+		selectedThemeBtns.forEach((el) => {
+			el.classList.add("menu__link--active");
+		});
+	}
+	
+ window.addEventListener("DOMContentLoaded", function () {
+	 setTheme("default");
+		document.querySelectorAll(".theme-default-link").forEach((el) => {
+			el.addEventListener("click", () =>{ 
+				setTheme("default");
 			});
-
-		function themMenuActions(evt) {
-			evt.preventDefault();
-			const targetEl = evt.target;
-			const themeDefault = targetEl.textContent == "Dark";
-			const themeLight = targetEl.textContent == "Light";
-			const themeContrast = targetEl.textContent == "Contrast";
-			const activeLink = targetEl.classList.contains("menu__link--active");
-			memoryTheme();
-				 if (!activeLink && themeDefault) {
-					_removeClasses(themMenu, "menu__link--active");
-					addClasses(targetEl,"theme-default");
-					theme = "theme-default";
-				}
-				 if (!activeLink && themeLight) {
-					_removeClasses(themMenu, "menu__link--active");
-					addClasses(targetEl,"theme-light");
-					theme = "theme-light";
-				}
-				 if (!activeLink && themeContrast) {
-					_removeClasses(themMenu, "menu__link--active");
-					addClasses(targetEl,"theme-contrast");
-					theme = "theme-contrast";
-				}
-				
-				function addClasses(element,theme){
-						element.classList.add("menu__link--active");
-						if(body.classList.contains("__lock")){
-							body.className = '__lock';
-							body.classList.add(theme);
-						} else {
-							body.className = '';
-							body.classList.add(theme);
-						}
-					}
-		}
-
-	function _removeClasses(collection, className) {
-		for (let elements of collection) {
-			elements.classList.remove(className);
-		}
-	}
-		// Memory theme 
-	function memoryTheme (){
-		const currentTheme = localStorage.getItem("theme");
-		if (currentTheme == "theme-default") {
-			theme = "theme-default";
-		} else if(currentTheme == "theme-light"){
-			theme = "theme-light";
-		} else{
-			theme = "theme-contrast";
-		}
-		localStorage.setItem("theme", theme);
-	}
-} 
+		});
+		document.querySelectorAll(".theme-light-link").forEach((el) => {
+			el.addEventListener("click", () =>{ 
+				setTheme("light");
+			});
+		})
+		document.querySelectorAll(".theme-contrast-link").forEach((el) => {
+			el.addEventListener("click", () =>{ 
+				setTheme("contrast");
+			});
+		})
+}); 
