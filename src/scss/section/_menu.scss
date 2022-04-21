@@ -4,7 +4,6 @@
   left: 0;
   right: 0;
   z-index: 60;
-  // width: 100%;
   overflow: hidden;
   height: 48px;
   bottom: 24px;
@@ -21,32 +20,29 @@
     left: 24px;
     right: 24px;
     bottom: 0;
-    // background-color: var(--bg-mob_menu);
+
     @include theme("default", "background-color", var(--bg-mob_menu));
     @include theme("light", "background-color", var(--base-white));
     @include theme("contrast", "background-color", var(--base-black));
     @include theme("light", "border", 1px solid var(--alfa1-black));
     @include theme("contrast", "border", 1px solid #9cdcfe);
+
     @media (min-width: ($md2 + px)) {
       display: none;
     }
   }
   &.__active {
     @media screen and (orientation: portrait) {
-      height: calc(100vh - 203px);
+      height: 465px;
     }
 
     @media screen and (orientation: landscape) {
-      height: calc(100vh - 48px);
+      height: 328px;
     }
+
     .menu__body {
-      // transform: translateY(0);
-      // opacity: 1;
-      // visibility: visible;
-      // animation: bounceInUp 0.8s ease-in-out;
       bottom: 48px;
     }
-    // background-color: var(--bg-backdrop);
   }
 
   &__container {
@@ -59,18 +55,12 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 24px;
-    // z-index: 3;
-    // background-color: var(--bg-mob_menu);
 
     @media (min-width: ($md2 + px)) {
       position: fixed;
       right: 0;
-      // align-items: flex-start;
-      // flex-direction: column;
-      // justify-content: space-between;
       height: 100%;
       width: 224px;
-      // background-color: transparent;
       padding: 48px 56px 24px 24px;
       margin-left: auto;
       margin-right: 0;
@@ -97,41 +87,35 @@
     bottom: -580px;
     left: 0;
     right: 0;
-    // width: 100%;
+    overflow: auto;
+    transition: bottom 0.37s ease-in;
+    z-index: 2;
     @media screen and (orientation: portrait) {
       height: auto;
     }
     @media screen and (orientation: landscape) {
-      height: 279px;
+      height: 245px;
     }
-    // background-color: var(--bg-mob_menu);
 
     @include theme("default", "background-color", var(--bg-mob_menu));
     @include theme("light", "background-color", var(--base-white));
     @include theme("contrast", "background-color", var(--base-black));
-    overflow: auto;
-    // @media (min-width: ($md2 + px)) {
 
-    // }
-    // transform: translateY(150%);
-    // opacity: 0;
-    // visibility: hidden;
-    transition: bottom 0.37s ease-in;
-    z-index: 2;
-    // border-bottom: 1px solid #282c34;
     @include theme("default", "border-bottom", 1px solid #282c34);
-    @include theme("light", "border", 1px solid var(--alfa1-black));
-    @include theme("contrast", "border", 1px solid #9cdcfe);
     @include theme("light", "border-bottom", none);
     @include theme("contrast", "border-bottom", none);
+
+    @include theme("light", "border", 1px solid var(--alfa1-black));
+    @include theme("contrast", "border", 1px solid #9cdcfe);
+
     @media (min-width: ($md2 + px)) {
       position: static;
-      padding: 0;
       flex-direction: column;
+      padding: 0;
+      flex-wrap: nowrap;
       background-color: transparent;
       height: 100%;
       overflow: visible;
-      // transform: translateY(0);
       opacity: 1;
       visibility: visible;
       border: none !important;
@@ -160,26 +144,12 @@
     flex-direction: column;
   }
   &__column-info {
-    // flex: 0 1 auto;
-
     & > :not(:last-child) {
-      // margin-bottom: 10px;
-      // margin-right: auto;
-      // padding-right: 24px;
       margin-bottom: 24px;
     }
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // justify-content: space-between;
+
     @media (min-width: ($md2 + px)) {
       flex: 1 1 auto;
-      // flex-direction: column;
-      // justify-content: space-between;
-      // & > :not(:last-child) {
-      // margin-right: 24px;
-      //   margin-bottom: 24px;
-      //   padding-right: 0;
-      // }
     }
   }
 
@@ -244,7 +214,6 @@
 
     &.menu__link--download {
       white-space: nowrap;
-      // margin: auto auto 15px 0;
       max-width: 125px;
       color: var(--base-white);
       @include theme("light", "color", var(--base-black));
@@ -258,12 +227,10 @@
           display: block;
           opacity: 0;
           visibility: hidden;
-          // transition: all 0.1s ease-in-out;
         }
       }
       @media (any-hover: hover) {
         &:hover {
-          // color: var(--base-orange);
           @include theme("default", "color", var(--base-orange));
           @include theme("light", "color", var(--base-violet));
           @include theme("contrast", "color", var(--contrast-purple));
@@ -305,7 +272,6 @@
   &__theme {
     @media (any-hover: hover) {
       & .menu__link:hover {
-        // color: var(--base-purple);
         @include theme("default", "color", var(--base-purple));
         @include theme("light", "color", var(--base-crimson));
         @include theme("contrast", "color", var(--base-blue));
@@ -319,13 +285,18 @@
         @include theme("light", "color", var(--text-black));
       }
     }
+
+    .menu__link {
+      cursor: pointer;
+    }
+
     .menu__link--active {
-      // color: var(--base-purple);
       @include theme("default", "color", var(--base-purple));
       @include theme("light", "color", var(--base-crimson) !important);
       @include theme("contrast", "color", var(--base-blue));
       pointer-events: none;
     }
+
     @media (min-width: ($md2 + px)) {
       .menu__list {
         margin: 0;
@@ -334,29 +305,29 @@
   }
 
   &__lang {
-    // margin-top: auto;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+
     .__mobail & {
       a {
         @include theme("light", "color", var(--alfa4-black));
       }
     }
-    li {
-    }
+
     span {
       padding: 0 5px 0 0;
       color: var(--alfa2);
       @include theme("light", "color", var(--alfa2-black));
     }
+
     .menu__link--active {
-      // color: var(--base-orange);
       @include theme("default", "color", var(--base-orange));
       @include theme("light", "color", var(--base-violet) !important);
       @include theme("contrast", "color", var(--contrast-purple));
       pointer-events: none;
     }
+
     @media (min-width: ($md2 + px)) {
       margin-bottom: auto;
       margin-top: 0;

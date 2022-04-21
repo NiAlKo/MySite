@@ -7,18 +7,22 @@
   &__item {
   }
 }
+
 .item-experience {
   position: relative;
   padding: 16px 0 16px 28px;
   margin: 0 -16px;
-  & > :not(:last-child) {
-    margin-bottom: 8px;
-  }
-  @include adaptive-value("padding-right", 48, 8, 1);
   background-color: var(--extra-light);
+
+  @include adaptive-value("padding-right", 48, 8, 1);
   @include theme("default", "background-color", var(--extra-light));
   @include theme("light", "background-color", var(--alfa05-black));
   @include theme("contrast", "background-color", var(--alfa1));
+
+  & > :not(:last-child) {
+    margin-bottom: 8px;
+  }
+
   @media (min-width: ($md2 + px)) {
     margin: 0;
   }
@@ -30,9 +34,9 @@
     left: 0;
     width: 12px;
     height: 100%;
-
     background-image: linear-gradient(45deg, var(--alfa15) 25%, transparent 0, transparent 75%, var(--alfa15) 0),
       linear-gradient(45deg, var(--alfa15) 25%, transparent 0, transparent 75%, var(--alfa15) 0);
+
     @include theme(
       "light",
       "background-image",
@@ -41,9 +45,11 @@
         linear-gradient(45deg, var(--alfa25-black) 25%, transparent 0, transparent 75%, var(--alfa25-black) 0)
       )
     );
+
     background-size: 2px 2px;
     background-position: 0 0, 1px 1px;
   }
+
   &__title {
     font-size: rem(17);
     font-weight: 400;
@@ -52,10 +58,11 @@
     @include theme("default", "color", var(--base-white));
     @include theme("light", "color", var(--base-dark));
     @include theme("contrast", "color", var(--base-white));
+
     &::before {
       content: "";
       position: absolute;
-      top: 3.5px;
+      top: 2.5px;
       left: -28px;
       width: 12px;
       height: 20px;
@@ -78,6 +85,7 @@
       @include theme("default", "color", var(--base-purple));
       @include theme("light", "color", var(--base-crimson));
       @include theme("contrast", "color", var(--base-blue));
+
       &::before {
         background-image: linear-gradient(45deg, var(--base-purple) 25%, transparent 0, transparent 75%, var(--base-purple) 0),
           linear-gradient(45deg, var(--base-purple) 25%, transparent 0, transparent 75%, var(--base-purple) 0);

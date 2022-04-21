@@ -1,27 +1,26 @@
 /*!=================-PROJECTS-=================!*/
 .projects {
+  & > :not(:first-child, :last-child) {
+    @include adaptive-value("margin-bottom", 72, 48, 1);
+  }
   &__title {
     margin-bottom: 24px;
   }
 
   &__item {
-    & > * {
-      @include adaptive-value("margin-bottom", 72, 48, 1);
-    }
   }
 
   &__link {
-    // color: var(--base-purple);
     @include theme("default", "color", var(--base-purple));
     @include theme("light", "color", var(--base-crimson));
     @include theme("contrast", "color", var(--base-blue));
-    // border-color: var(--base-purple);
+
     @include theme("default", "border-color", var(--base-purple));
     @include theme("light", "border-color", var(--base-crimson));
     @include theme("contrast", "border-color", var(--base-blue));
+
     &::after,
     &::before {
-      // background-image: linear-gradient(to left, transparent 40%, var(--base-purple) 40%);
       @include theme("default", "background-image", linear-gradient(to left, transparent 40%, var(--base-purple) 40%));
       @include theme("light", "background-image", linear-gradient(to left, transparent 40%, var(--base-crimson) 40%));
       @include theme("contrast", "background-image", linear-gradient(to left, transparent 40%, var(--base-blue) 40%));
@@ -29,15 +28,16 @@
 
     @media (any-hover: hover) {
       &:hover {
+        @include theme("light", "color", var(--base-white) !important);
+
         span {
-          // background-color: var(--base-purple);
           @include theme("default", "background-color", var(--base-purple));
           @include theme("light", "background-color", var(--base-crimson));
           @include theme("contrast", "background-color", var(--base-blue));
         }
-        @include theme("light", "color", var(--base-white) !important);
       }
     }
+
     &:active {
       opacity: 0.6;
     }
@@ -48,6 +48,7 @@
   & > :not(:last-child) {
     margin-bottom: 16px;
   }
+
   &__info {
     display: inline-flex;
     align-items: center;
@@ -59,6 +60,7 @@
     color: var(--base-white);
     @include theme("light", "color", var(--base-black));
   }
+
   &__tegs {
     display: flex;
     align-items: center;
@@ -66,6 +68,7 @@
       margin-right: 4px;
     }
   }
+
   &__date,
   &__type {
     position: relative;
@@ -94,7 +97,6 @@
   }
 
   &__slide {
-    cursor: pointer;
   }
 
   &__img {
@@ -117,6 +119,7 @@
     & > :not(:last-child) {
       margin-right: 8px;
     }
+
     @media (min-width: ($md2 + px)) {
       margin-bottom: 8px !important;
     }
@@ -130,36 +133,40 @@
     color: var(--base-white);
     @include theme("light", "color", var(--base-black));
     transition: all 0.2s ease-in-out;
+
     &:first-child {
-      // color: var(--base-orange);
       @include theme("default", "color", var(--base-orange));
       @include theme("light", "color", var(--base-violet));
       @include theme("contrast", "color", var(--contrast-purple));
     }
+
     @media (any-hover: hover) {
       &:hover {
         &:first-child {
           color: var(--base-white);
         }
-        // color: var(--bg);
+
         @include theme("default", "color", var(--bg));
         @include theme("light", "color", var(--base-white));
         @include theme("contrast", "color", var(--base-black));
       }
+
       &:hover::before {
         background-color: var(--base-white);
         @include theme("light", "background-color", var(--base-black));
       }
+
       &:first-child:hover::before {
         @include theme("default", "background-color", var(--base-orange));
         @include theme("light", "background-color", var(--base-violet));
         @include theme("contrast", "background-color", var(--contrast-purple));
-        // background-color: var(--base-orange);
       }
     }
+
     &:active {
       opacity: 0.6;
     }
+
     &::before {
       content: "";
       position: absolute;

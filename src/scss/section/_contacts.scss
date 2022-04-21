@@ -4,6 +4,7 @@
   & > :not(:last-child) {
     margin-bottom: 24px;
   }
+
   &__title {
   }
 
@@ -14,6 +15,9 @@
   }
 
   &__item {
+    display: flex;
+    flex-direction: column;
+
     span {
       font-size: rem(13);
       line-height: 1.2;
@@ -21,38 +25,39 @@
       @include theme("light", "color", var(--alfa5-black));
       text-transform: uppercase;
     }
+
     a {
       font-size: 14px;
       line-height: 1.4;
       color: var(--base-white);
       @include theme("light", "color", var(--base-black));
     }
-    display: flex;
-    flex-direction: column;
+
     & > * {
       margin-bottom: 2px;
     }
   }
+
   &__link {
     margin-bottom: 96px !important;
     @include theme("default", "color", var(--base-orange));
     @include theme("light", "color", var(--base-violet));
     @include theme("contrast", "color", var(--contrast-purple));
-    // border-color: var(--base-purple);
+
     @include theme("default", "border-color", var(--base-orange));
     @include theme("light", "border-color", var(--base-violet));
     @include theme("contrast", "border-color", var(--contrast-purple));
+
     &::after,
     &::before {
-      // background-image: linear-gradient(to left, transparent 40%, var(--base-purple) 40%);
       @include theme("default", "background-image", linear-gradient(to left, transparent 40%, var(--base-orange) 40%));
       @include theme("light", "background-image", linear-gradient(to left, transparent 40%, var(--base-violet) 40%));
       @include theme("contrast", "background-image", linear-gradient(to left, transparent 40%, var(--contrast-purple) 40%));
     }
+
     @media (any-hover: hover) {
       &:hover {
         span {
-          // background-color: var(--base-orange);
           @include theme("default", "background-color", var(--base-orange));
           @include theme("light", "background-color", var(--base-violet));
           @include theme("contrast", "background-color", var(--contrast-purple));
@@ -60,6 +65,7 @@
       }
     }
   }
+
   &__theme-menu {
     padding-bottom: 48px;
   }

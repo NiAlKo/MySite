@@ -3,7 +3,6 @@
 /**======================-ОСНОВНОЙ-БЛОК-=================*/
 .__link--active {
   position: relative;
-  // color: var(--base-orange) !important;
   @include theme("default", "color", var(--base-orange) !important);
   @include theme("light", "color", var(--base-violet) !important);
   @include theme("contrast", "color", var(--contrast-purple) !important);
@@ -17,7 +16,6 @@
     height: 0;
     border-style: solid;
     border-width: 5px 0 5px 10px;
-    // border-color: transparent transparent transparent var(--base-orange);
     @include theme("default", "border-color", transparent transparent transparent var(--base-orange));
     @include theme("light", "border-color", transparent transparent transparent var(--base-violet));
     @include theme("contrast", "border-color", transparent transparent transparent var(--contrast-purple));
@@ -65,9 +63,9 @@
     height: 100%;
     z-index: -1;
   }
+
   @media (any-hover: hover) {
     &:hover {
-      // color: var(--bg) !important;
       @include theme("default", "color", var(--bg) !important);
       @include theme("light", "color", var(--base-black) !important);
       @include theme("contrast", "color", var(--base-black) !important);
@@ -77,7 +75,8 @@
 
 @import "./swiper";
 
-/**======================-ГОТОВЫЕ-КЛАССЫ-=================*/ // responsive images
+/**======================-ГОТОВЫЕ-КЛАССЫ-=================*/
+// responsive images
 .__ibg {
   background-position: center;
   background-size: cover;

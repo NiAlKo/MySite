@@ -1,5 +1,6 @@
 // /*!=================-SETTINGS-=================!*/
 @use "sass:math";
+
 // Цветовые схемы тем
 @mixin theme($typeTheme, $property, $rules) {
   @if $typeTheme == default {
@@ -17,6 +18,7 @@
   }
   // @include theme("default", "color", var(--base-white));
 }
+
 @mixin themeWith($typeTheme, $property, $rules) {
   @if $typeTheme == default {
     &.theme-#{$typeTheme} {
@@ -32,6 +34,7 @@
     }
   }
 }
+
 // Подключение шрифта
 @mixin font($fontName, $fileName, $weight, $style) {
   @font-face {

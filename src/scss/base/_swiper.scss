@@ -1,6 +1,7 @@
 .swiper-vertical > .swiper-wrapper {
   flex-direction: column;
 }
+
 .swiper-wrapper {
   position: relative;
   width: 100%;
@@ -13,9 +14,11 @@
 .swiper-pointer-events {
   touch-action: pan-y;
 }
+
 .swiper-pointer-events.swiper-vertical {
   touch-action: pan-x;
 }
+
 .swiper-slide {
   flex-shrink: 0;
   width: 100%;
@@ -30,9 +33,12 @@
   position: relative;
   overflow: hidden;
   outline: none;
+  cursor: pointer;
+
   &:not(:last-child) {
     margin-right: 4px;
   }
+
   &::after,
   &::before {
     content: "";
@@ -42,23 +48,26 @@
     display: block;
     top: 0;
   }
+
   &::after {
     background-color: var(--alfa15);
     @include theme("light", "background-color", var(--alfa15-black));
   }
+
   @media (any-hover: hover) {
     &:hover::before {
       background-color: var(--alfa4);
       @include theme("light", "background-color", var(--alfa4-black));
     }
   }
-  cursor: pointer;
 }
+
 .swiper-pagination-bullet-active {
   &::before {
     background-color: var(--text);
     @include theme("light", "background-color", var(--text-black));
     animation: slide-progress 3.5s linear;
+
     .swiper-paused & {
       animation-play-state: paused;
     }
