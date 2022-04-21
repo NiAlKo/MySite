@@ -1,8 +1,9 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Swiper = factory());
-})(this, (function () { 'use strict';
+		typeof define === 'function' && define.amd ? define(factory) :
+			(global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Swiper = factory());
+})(this, (function () {
+	'use strict';
 
 	/* eslint-disable no-param-reassign */
 	function isObject$1(obj) {
@@ -19,7 +20,7 @@
 		}
 
 		Object.keys(src).forEach(key => {
-			if (typeof target[key] === 'undefined') target[key] = src[key];else if (isObject$1(src[key]) && isObject$1(target[key]) && Object.keys(src[key]).length > 0) {
+			if (typeof target[key] === 'undefined') target[key] = src[key]; else if (isObject$1(src[key]) && isObject$1(target[key]) && Object.keys(src[key]).length > 0) {
 				extend$1(target[key], src[key]);
 			}
 		});
@@ -28,12 +29,12 @@
 	const ssrDocument = {
 		body: {},
 
-		addEventListener() {},
+		addEventListener() { },
 
-		removeEventListener() {},
+		removeEventListener() { },
 
 		activeElement: {
-			blur() {},
+			blur() { },
 
 			nodeName: ''
 		},
@@ -52,7 +53,7 @@
 
 		createEvent() {
 			return {
-				initEvent() {}
+				initEvent() { }
 
 			};
 		},
@@ -63,7 +64,7 @@
 				childNodes: [],
 				style: {},
 
-				setAttribute() {},
+				setAttribute() { },
 
 				getElementsByTagName() {
 					return [];
@@ -114,22 +115,22 @@
 			search: ''
 		},
 		history: {
-			replaceState() {},
+			replaceState() { },
 
-			pushState() {},
+			pushState() { },
 
-			go() {},
+			go() { },
 
-			back() {}
+			back() { }
 
 		},
 		CustomEvent: function CustomEvent() {
 			return this;
 		},
 
-		addEventListener() {},
+		addEventListener() { },
 
-		removeEventListener() {},
+		removeEventListener() { },
 
 		getComputedStyle() {
 			return {
@@ -140,15 +141,15 @@
 			};
 		},
 
-		Image() {},
+		Image() { },
 
-		Date() {},
+		Date() { },
 
 		screen: {},
 
-		setTimeout() {},
+		setTimeout() { },
 
-		clearTimeout() {},
+		clearTimeout() { },
 
 		matchMedia() {
 			return {};
@@ -428,7 +429,7 @@
 				eventData.unshift(e);
 			}
 
-			if ($(target).is(targetSelector)) listener.apply(target, eventData);else {
+			if ($(target).is(targetSelector)) listener.apply(target, eventData); else {
 				const parents = $(target).parents(); // eslint-disable-line
 
 				for (let k = 0; k < parents.length; k += 1) {
@@ -1741,7 +1742,7 @@
 			marginLeft: '',
 			marginBottom: '',
 			marginTop: ''
-		});else slides.css({
+		}); else slides.css({
 			marginRight: '',
 			marginBottom: '',
 			marginTop: ''
@@ -2444,7 +2445,7 @@
 		const minTranslate = swiper.minTranslate();
 		const maxTranslate = swiper.maxTranslate();
 		let newTranslate;
-		if (translateBounds && translate > minTranslate) newTranslate = minTranslate;else if (translateBounds && translate < maxTranslate) newTranslate = maxTranslate;else newTranslate = translate; // Update progress
+		if (translateBounds && translate > minTranslate) newTranslate = minTranslate; else if (translateBounds && translate < maxTranslate) newTranslate = maxTranslate; else newTranslate = translate; // Update progress
 
 		swiper.updateProgress(newTranslate);
 
@@ -2547,7 +2548,7 @@
 		let dir = direction;
 
 		if (!dir) {
-			if (activeIndex > previousIndex) dir = 'next';else if (activeIndex < previousIndex) dir = 'prev';else dir = 'reset';
+			if (activeIndex > previousIndex) dir = 'next'; else if (activeIndex < previousIndex) dir = 'prev'; else dir = 'reset';
 		}
 
 		swiper.emit(`transition${step}`);
@@ -2717,7 +2718,7 @@
 		}
 
 		let direction;
-		if (slideIndex > activeIndex) direction = 'next';else if (slideIndex < activeIndex) direction = 'prev';else direction = 'reset'; // Update Index
+		if (slideIndex > activeIndex) direction = 'next'; else if (slideIndex < activeIndex) direction = 'prev'; else direction = 'reset'; // Update Index
 
 		if (rtl && -translate === swiper.translate || !rtl && translate === swiper.translate) {
 			swiper.updateActiveIndex(slideIndex); // Update Height
@@ -3665,7 +3666,7 @@
 			}
 
 			if (swiper.swipeDirection === 'next') {
-				if (ratio >= params.longSwipesRatio) swiper.slideTo(params.rewind && swiper.isEnd ? rewindFirstIndex : stopIndex + increment);else swiper.slideTo(stopIndex);
+				if (ratio >= params.longSwipesRatio) swiper.slideTo(params.rewind && swiper.isEnd ? rewindFirstIndex : stopIndex + increment); else swiper.slideTo(stopIndex);
 			}
 
 			if (swiper.swipeDirection === 'prev') {
@@ -3798,7 +3799,7 @@
 
 	let dummyEventAttached = false;
 
-	function dummyEventListener() {}
+	function dummyEventListener() { }
 
 	const events = (swiper, method) => {
 		const document = getDocument();
@@ -4037,24 +4038,24 @@
 		const suffixes = prepareClasses(['initialized', params.direction, {
 			'pointer-events': !support.touch
 		}, {
-			'free-mode': swiper.params.freeMode && params.freeMode.enabled
-		}, {
-			'autoheight': params.autoHeight
-		}, {
-			'rtl': rtl
-		}, {
-			'grid': params.grid && params.grid.rows > 1
-		}, {
-			'grid-column': params.grid && params.grid.rows > 1 && params.grid.fill === 'column'
-		}, {
-			'android': device.android
-		}, {
-			'ios': device.ios
-		}, {
-			'css-mode': params.cssMode
-		}, {
-			'centered': params.cssMode && params.centeredSlides
-		}], params.containerModifierClass);
+				'free-mode': swiper.params.freeMode && params.freeMode.enabled
+			}, {
+				'autoheight': params.autoHeight
+			}, {
+				'rtl': rtl
+			}, {
+				'grid': params.grid && params.grid.rows > 1
+			}, {
+				'grid-column': params.grid && params.grid.rows > 1 && params.grid.fill === 'column'
+			}, {
+				'android': device.android
+			}, {
+				'ios': device.ios
+			}, {
+				'css-mode': params.cssMode
+			}, {
+				'centered': params.cssMode && params.centeredSlides
+			}], params.containerModifierClass);
 		classNames.push(...suffixes);
 		$el.addClass([...classNames].join(' '));
 		swiper.emitContainerClasses();
@@ -5019,7 +5020,7 @@
 
 			const activeIndex = swiper.activeIndex || 0;
 			let offsetProp;
-			if (swiper.rtlTranslate) offsetProp = 'right';else offsetProp = swiper.isHorizontal() ? 'left' : 'top';
+			if (swiper.rtlTranslate) offsetProp = 'right'; else offsetProp = swiper.isHorizontal() ? 'left' : 'top';
 			let slidesAfter;
 			let slidesBefore;
 
@@ -5335,14 +5336,14 @@
 
 			if (swiper.isHorizontal()) {
 				if (isPageUp || isPageDown || isArrowLeft || isArrowRight) {
-					if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+					if (e.preventDefault) e.preventDefault(); else e.returnValue = false;
 				}
 
 				if ((isPageDown || isArrowRight) && !rtl || (isPageUp || isArrowLeft) && rtl) swiper.slideNext();
 				if ((isPageUp || isArrowLeft) && !rtl || (isPageDown || isArrowRight) && rtl) swiper.slidePrev();
 			} else {
 				if (isPageUp || isPageDown || isArrowUp || isArrowDown) {
-					if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+					if (e.preventDefault) e.preventDefault(); else e.returnValue = false;
 				}
 
 				if (isPageDown || isArrowDown) swiper.slideNext();
@@ -5588,8 +5589,8 @@
 
 			if (params.forceToAxis) {
 				if (swiper.isHorizontal()) {
-					if (Math.abs(data.pixelX) > Math.abs(data.pixelY)) delta = -data.pixelX * rtlFactor;else return true;
-				} else if (Math.abs(data.pixelY) > Math.abs(data.pixelX)) delta = -data.pixelY;else return true;
+					if (Math.abs(data.pixelX) > Math.abs(data.pixelY)) delta = -data.pixelX * rtlFactor; else return true;
+				} else if (Math.abs(data.pixelY) > Math.abs(data.pixelX)) delta = -data.pixelY; else return true;
 			} else {
 				delta = Math.abs(data.pixelX) > Math.abs(data.pixelY) ? -data.pixelX * rtlFactor : -data.pixelY;
 			}
@@ -5742,7 +5743,7 @@
 				}
 			}
 
-			if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+			if (e.preventDefault) e.preventDefault(); else e.returnValue = false;
 			return false;
 		}
 
@@ -6016,7 +6017,7 @@
 		}
 
 		return `.${classes.trim().replace(/([\.:!\/])/g, '\\$1') // eslint-disable-line
-.replace(/ /g, '.')}`;
+			.replace(/ /g, '.')}`;
 	}
 
 	function Pagination(_ref) {
@@ -6628,7 +6629,7 @@
 				$dragEl
 			} = scrollbar;
 			if (!isTouched) return;
-			if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+			if (e.preventDefault) e.preventDefault(); else e.returnValue = false;
 			setDragPosition(e);
 			$wrapperEl.transition(0);
 			$el.transition(0);
@@ -8616,7 +8617,7 @@
 					stop();
 				}
 
-				if (swiper.params.cssMode && swiper.autoplay.running) run();else if (autoplayResult === false) {
+				if (swiper.params.cssMode && swiper.autoplay.running) run(); else if (autoplayResult === false) {
 					run();
 				}
 			}, delay);
@@ -8821,7 +8822,7 @@
 
 				const prevIndex = swiper.slides.eq(currentIndex).prevAll(`[data-swiper-slide-index="${slideToIndex}"]`).eq(0).index();
 				const nextIndex = swiper.slides.eq(currentIndex).nextAll(`[data-swiper-slide-index="${slideToIndex}"]`).eq(0).index();
-				if (typeof prevIndex === 'undefined') slideToIndex = nextIndex;else if (typeof nextIndex === 'undefined') slideToIndex = prevIndex;else if (nextIndex - currentIndex < currentIndex - prevIndex) slideToIndex = nextIndex;else slideToIndex = prevIndex;
+				if (typeof prevIndex === 'undefined') slideToIndex = nextIndex; else if (typeof nextIndex === 'undefined') slideToIndex = prevIndex; else if (nextIndex - currentIndex < currentIndex - prevIndex) slideToIndex = nextIndex; else slideToIndex = prevIndex;
 			}
 
 			swiper.slideTo(slideToIndex);
@@ -8913,7 +8914,7 @@
 						} else {
 							newThumbsIndex = newThumbsIndex + Math.floor(slidesPerView / 2) - 1;
 						}
-					} else if (newThumbsIndex > currentThumbsIndex && thumbsSwiper.params.slidesPerGroup === 1) ;
+					} else if (newThumbsIndex > currentThumbsIndex && thumbsSwiper.params.slidesPerGroup === 1);
 
 					thumbsSwiper.slideTo(newThumbsIndex, initial ? 0 : undefined);
 				}

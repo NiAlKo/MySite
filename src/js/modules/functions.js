@@ -12,7 +12,7 @@ export function isWebp() {
 	testWebP(function (support) {
 		let className = support === true ? 'webp' : 'no-webp';
 		document.documentElement.classList.add(className);
-	}) 
+	})
 }
 
 // Adaptive img
