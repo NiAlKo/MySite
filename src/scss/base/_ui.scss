@@ -21,6 +21,7 @@
     @include theme("contrast", "border-color", transparent transparent transparent var(--contrast-purple));
     animation: flash 1.6s ease-in-out infinite;
   }
+
   &.__mobail {
     color: var(--base-white) !important;
     &::before {

@@ -33,39 +33,31 @@ window.addEventListener("scroll", () => {
 	}
 });
 
-// Обнаружение мобильного
-let isMobile = {
-	Android: function () {
-		return navigator.userAgent.match(/Android/i);
-	},
-	BlackBerry: function () {
-		return navigator.userAgent.match(/BlackBerry/i);
-	},
-	iOS: function () {
-		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-	},
-	Opera: function () {
-		return navigator.userAgent.match(/Opera Mini/i);
-	},
-	Windows: function () {
-		return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-	},
-	any: function () {
-		return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
-	},
-};
+window.addEventListener("resize", function () {
+	if (window.innerWidth < 991.98) {
+		menuBody.classList.add("__mobail");
+		const activeLink = document.querySelectorAll(".__link--active");
+		activeLink.forEach((el) => {
+			el.classList.remove("__link--active");
+		});
+		document.querySelector(".menu__logo").classList.add("__mobail", "__link--active");
+		document.querySelectorAll(".menu__nav .menu__link").forEach((el) => {
+			el.classList.add("__mobail");
+		});
 
-if (isMobile.any()) {
-	menuBody.classList.add("__mobail");
-	document.querySelector(".__link--active").classList.add("__mobail");
-	document.querySelectorAll(".menu__nav .menu__link").forEach((el) => {
-		el.classList.add("__mobail");
-	});
+		document.addEventListener("click", function (evt) {
+			if (evt.target.matches(".menu__link.__mobail") || evt.target.matches("body.__lock")) {
+				toggleClass("__active");
+				body.classList.toggle("__lock");
+			}
+		});
+	} else {
+		document.querySelector(".menu__logo").classList.remove("__mobail");
+		document.querySelectorAll(".menu__nav .menu__link").forEach((el) => {
+			el.classList.remove("__mobail");
+		});
+	}
+});
 
-	document.addEventListener("click", function (evt) {
-		if (evt.target.matches(".menu__link.__mobail") || evt.target.matches("body.__lock")) {
-			toggleClass("__active");
-			body.classList.toggle("__lock");
-		}
-	});
-}
+
+

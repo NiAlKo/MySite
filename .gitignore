@@ -1,10 +1,3 @@
 .vscode
-gulp
-src/files
-src/fonts
-src/img
-src/favicon.ico
 node_modules
 package-lock.json
-package.json
-gulpfile.js

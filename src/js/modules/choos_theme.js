@@ -19,24 +19,10 @@ function setTheme(nameTheme) {
 	});
 }
 function choosTheme() {
-	const arrayThemeLink = [".theme-default-link", ".theme-light-link", ".theme-contrast-link"];
-	const arrayAllThemeLink = [];
-
-	arrayThemeLink.forEach((el) => {
-		document.querySelectorAll(el).forEach((element) => {
-			arrayAllThemeLink.push(element);
-		});
-	});
-
-	arrayAllThemeLink.forEach((link) => {
-		link.addEventListener("click", (evt) => {
-			if (evt.target.matches(".theme-default-link")) {
-				setTheme("default");
-			} else if (evt.target.matches(".theme-light-link")) {
-				setTheme("light");
-			} else {
-				setTheme("contrast");
-			}
+	const arrayThemeLink = ["default", "light", "contrast"];
+	arrayThemeLink.forEach(themeName => {
+		document.querySelectorAll(".theme-" + themeName + "-link").forEach(element => {
+			element.addEventListener("click", () => { setTheme(themeName); });
 		});
 	});
 }
