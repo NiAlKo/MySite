@@ -8,11 +8,12 @@ export function isWebp() {
 		};
 		webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 	}
+
 	// Добавление класса _webp или _no-webp для HTML 
 	testWebP(function (support) {
 		let className = support === true ? 'webp' : 'no-webp';
 		document.documentElement.classList.add(className);
-	})
+	});
 }
 
 // Adaptive img
@@ -25,3 +26,27 @@ export function ibg() {
 	}
 }
 ibg();
+
+// choosTheme
+export function choosTheme() {
+	const arrayThemeLink = [".theme-default-link", ".theme-light-link", ".theme-contrast-link"];
+	const arrayAllThemeLink = [];
+
+	arrayThemeLink.forEach((el) => {
+		document.querySelectorAll(el).forEach((element) => {
+			arrayAllThemeLink.push(element);
+		});
+	});
+
+	arrayAllThemeLink.forEach((link) => {
+		link.addEventListener("click", (evt) => {
+			if (evt.target.matches(".theme-default-link")) {
+				setTheme("default");
+			} else if (evt.target.matches(".theme-light-link")) {
+				setTheme("light");
+			} else {
+				setTheme("contrast");
+			}
+		});
+	});
+}

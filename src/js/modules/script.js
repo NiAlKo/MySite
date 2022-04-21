@@ -13,7 +13,7 @@ burger.addEventListener("click", function () {
 function toggleClass(className) {
 	arrayMenuElement.forEach((el) => {
 		el.classList.toggle(className);
-	})
+	});
 }
 
 window.addEventListener("scroll", () => {
@@ -27,7 +27,6 @@ window.addEventListener("scroll", () => {
 						el.classList.remove("__link--active");
 					}
 				});
-
 				document.querySelectorAll(".menu__nav li")[i].querySelector("a").classList.add("__link--active");
 			}
 		});
@@ -57,7 +56,6 @@ let isMobile = {
 };
 
 if (isMobile.any()) {
-	document.querySelector("html").classList.add("__touch");
 	menuBody.classList.add("__mobail");
 	document.querySelector(".__link--active").classList.add("__mobail");
 	document.querySelectorAll(".menu__nav .menu__link").forEach((el) => {
@@ -70,51 +68,4 @@ if (isMobile.any()) {
 			body.classList.toggle("__lock");
 		}
 	});
-}
-
-function setTheme(nameTheme) {
-	const arrayTheme = ["theme-default", "theme-light", "theme-contrast"];
-	const selectedThemeBtns = document.querySelectorAll(".theme-" + nameTheme + "-link");
-	const themBtns = document.querySelectorAll(".menu__theme .menu__link");
-
-	arrayTheme.forEach((el) => {
-		body.classList.remove(el);
-	})
-
-	body.classList.add("theme-" + nameTheme);
-
-	themBtns.forEach((el) => {
-		el.classList.remove("menu__link--active");
-	});
-
-	selectedThemeBtns.forEach((el) => {
-		el.classList.add("menu__link--active");
-	});
-}
-
-window.addEventListener("DOMContentLoaded", function () {
-	setTheme("default");
-	choosTheme();
-});
-
-function choosTheme() {
-	const arrayThemeLink = [".theme-default-link", ".theme-light-link", ".theme-contrast-link"];
-	const arrayLink = [];
-	arrayThemeLink.forEach((el) => {
-		document.querySelectorAll(el).forEach((element) => {
-			arrayLink.push(element);
-		});
-	});
-	arrayLink.forEach((link) => {
-		link.addEventListener("click", (evt) => {
-			if (evt.target.matches(".theme-default-link")) {
-				setTheme("default");
-			} else if (evt.target.matches(".theme-light-link")) {
-				setTheme("light");
-			} else {
-				setTheme("contrast");
-			}
-		});
-	})
-
 }

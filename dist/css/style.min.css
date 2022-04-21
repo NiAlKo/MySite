@@ -253,6 +253,10 @@ body.theme-contrast {
 .main-page__skills > :not(:last-child), .main-page__about > :not(:last-child) {
   margin-bottom: 24px;
 }
+.main-page__skills, .main-page__about, .main-page__experience, .main-page__projects {
+  padding-top: 40px;
+  margin-top: -40px;
+}
 .main-page__experience {
   padding-bottom: 72px;
 }
@@ -1363,7 +1367,7 @@ body.theme-contrast {
   display: none;
 }
 .contacts > :not(:last-child) {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 .contacts__list > :not(:last-child) {
   margin-bottom: 16px;

@@ -98,8 +98,12 @@ body {
       margin-bottom: 24px;
     }
   }
-
-  &__about {
+  &__skills,
+  &__about,
+  &__experience,
+  &__projects {
+    padding-top: 40px;
+    margin-top: -40px;
   }
 
   &__experience {
