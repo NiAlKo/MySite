@@ -622,6 +622,9 @@ body.theme-contrast {
     margin-left: auto;
     margin-right: 0;
   }
+  .menu__container > .menu__logo {
+    display: none;
+  }
 }
 @media (min-width: 1980px) {
   .menu__container {
@@ -758,6 +761,21 @@ body.theme-contrast {
 }
 .theme-contrast .__mobail .menu__nav a {
   color: var(--base-white);
+}
+.__mobail .menu__nav a.__link--active {
+  margin-left: 0;
+}
+.theme-default .__mobail .menu__nav a.__link--active {
+  color: var(--base-orange) !important;
+}
+.theme-light .__mobail .menu__nav a.__link--active {
+  color: var(--base-violet) !important;
+}
+.theme-contrast .__mobail .menu__nav a.__link--active {
+  color: var(--contrast-purple) !important;
+}
+.__mobail .menu__nav a.__link--active::before {
+  display: none;
 }
 .menu__nav li:first-child {
   display: none;
