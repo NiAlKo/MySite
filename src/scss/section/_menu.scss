@@ -64,6 +64,10 @@
       padding: 48px 56px 24px 24px;
       margin-left: auto;
       margin-right: 0;
+
+      & > .menu__logo {
+        display: none;
+      }
     }
 
     @media (min-width: 1980px) {
@@ -173,6 +177,15 @@
         @include theme("default", "color", var(--base-white));
         @include theme("light", "color", var(--base-black));
         @include theme("contrast", "color", var(--base-white));
+      }
+      a.__link--active {
+        @include theme("default", "color", var(--base-orange) !important);
+        @include theme("light", "color", var(--base-violet) !important);
+        @include theme("contrast", "color", var(--contrast-purple) !important);
+        margin-left: 0;
+        &::before {
+          display: none;
+        }
       }
     }
     li:first-child {

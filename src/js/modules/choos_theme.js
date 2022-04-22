@@ -18,6 +18,7 @@ function setTheme(nameTheme) {
 		el.classList.add("menu__link--active");
 	});
 }
+
 function choosTheme() {
 	const arrayThemeLink = ["default", "light", "contrast"];
 	arrayThemeLink.forEach(themeName => {
