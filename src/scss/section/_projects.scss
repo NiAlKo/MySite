@@ -103,7 +103,9 @@
     width: 100%;
     padding-bottom: 60%;
     margin-bottom: 8px;
+    @include theme("default", "border", solid 1px transparent);
     @include theme("light", "border", solid 1px var(--alfa1-black));
+    @include theme("contrast", "border", solid 1px transparent);
   }
 
   &__pagination {

@@ -106,11 +106,10 @@
     @include theme("contrast", "background-color", var(--base-black));
 
     @include theme("default", "border-bottom", 1px solid #282c34);
-    @include theme("light", "border-bottom", none);
-    @include theme("contrast", "border-bottom", none);
-
     @include theme("light", "border", 1px solid var(--alfa1-black));
     @include theme("contrast", "border", 1px solid #9cdcfe);
+    @include theme("light", "border-bottom", none);
+    @include theme("contrast", "border-bottom", none);
 
     @media (min-width: ($md2 + px)) {
       position: static;

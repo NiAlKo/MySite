@@ -29,7 +29,7 @@ if (".item-projects__slider") {
 		watchSlidesProgress: true,
 
 		fadeEffect: {
-			// crossFade: true
+			crossFade: true
 		},
 
 		pagination: {
