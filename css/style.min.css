@@ -675,16 +675,16 @@ body.theme-contrast {
   border-bottom: 1px solid #282c34;
 }
 .theme-light .menu__body {
-  border-bottom: none;
-}
-.theme-contrast .menu__body {
-  border-bottom: none;
-}
-.theme-light .menu__body {
   border: 1px solid var(--alfa1-black);
 }
 .theme-contrast .menu__body {
   border: 1px solid #9cdcfe;
+}
+.theme-light .menu__body {
+  border-bottom: none;
+}
+.theme-contrast .menu__body {
+  border-bottom: none;
 }
 @media (min-width: 991.98px) {
   .menu__body {
@@ -1032,14 +1032,18 @@ body.theme-contrast {
 /*!=================-SKILLS-=================!*/
 .skills__stack {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 144px);
+  grid-template-columns: repeat(auto-fill, 171.5px);
   row-gap: 24px;
   justify-content: space-between;
-  margin-right: 19px;
 }
-@media (max-width: 339.98px) {
+@media (max-width: 374.98px) {
   .skills__stack {
-    margin-right: 0;
+    grid-template-columns: repeat(auto-fill, 144px);
+  }
+}
+@media (min-width: 991.98px) {
+  .skills__stack {
+    grid-template-columns: repeat(auto-fill, 144px);
   }
 }
 
@@ -1055,6 +1059,15 @@ body.theme-contrast {
 }
 .theme-contrast .stack-skills__item path[class=color-svg] {
   fill: var(--base-blue);
+}
+.theme-default .stack-skills__item path[class=logo] {
+  fill: var(--bg);
+}
+.theme-light .stack-skills__item path[class=logo] {
+  fill: var(--base-white);
+}
+.theme-contrast .stack-skills__item path[class=logo] {
+  fill: var(--base-black);
 }
 .stack-skills__icon {
   display: flex;
@@ -1134,7 +1147,7 @@ body.theme-contrast {
 .item-experience__title::before {
   content: "";
   position: absolute;
-  top: 2.5px;
+  top: 3px;
   left: -28px;
   width: 12px;
   height: 20px;
@@ -1297,8 +1310,14 @@ body.theme-contrast {
   padding-bottom: 60%;
   margin-bottom: 8px;
 }
+.theme-default .item-projects__img {
+  border: solid 1px transparent;
+}
 .theme-light .item-projects__img {
   border: solid 1px var(--alfa1-black);
+}
+.theme-contrast .item-projects__img {
+  border: solid 1px transparent;
 }
 .item-projects__pagination {
   display: flex;
