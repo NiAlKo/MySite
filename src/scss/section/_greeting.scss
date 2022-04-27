@@ -3,15 +3,14 @@
   @include adaptive-value("padding-top", 48, 40, 1);
   @include adaptive-value("padding-bottom", 72, 48, 1);
 
-  & > :not(:last-child) {
-    margin-bottom: 24px;
-  }
-
   &__title {
     font-weight: 500;
     @include adaptive-value("font-size", 36, 28, 1);
     line-height: 1.33;
     letter-spacing: -0.02em;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
 
     @include theme("default", "color", var(--base-white));
     @include theme("light", "color", var(--base-black));
@@ -25,6 +24,7 @@
     text-transform: uppercase;
     font-size: rem(13);
     line-height: 1.23;
+    margin-top: 24px;
 
     @include theme("default", "color", var(--base-purple));
     @include theme("light", "color", var(--base-crimson));

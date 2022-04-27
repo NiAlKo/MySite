@@ -1,5 +1,5 @@
 .vscode
-dist/css/style.min.css
+dist/css/style.css
 gulp
 node_modules
 package.json
