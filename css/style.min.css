@@ -652,16 +652,6 @@ body.theme-contrast {
   transition: bottom 0.37s ease-in;
   z-index: 2;
 }
-@media screen and (orientation: portrait) {
-  .menu__body {
-    height: auto;
-  }
-}
-@media screen and (orientation: landscape) {
-  .menu__body {
-    height: 245px;
-  }
-}
 .theme-default .menu__body {
   background-color: var(--bg-mob_menu);
 }
@@ -701,6 +691,16 @@ body.theme-contrast {
   }
   .theme-default .menu__body {
     background-color: transparent;
+  }
+}
+@media screen and (orientation: portrait) {
+  .menu__body.__mobail {
+    height: auto;
+  }
+}
+@media screen and (orientation: landscape) {
+  .menu__body.__mobail {
+    height: 245px;
   }
 }
 .menu__body.__mobail .menu__link--download {
@@ -971,9 +971,6 @@ body.theme-contrast {
     padding-bottom: calc(48px + 24 * ((100vw - 375px) / 297));
   }
 }
-.greeting > :not(:last-child) {
-  margin-bottom: 24px;
-}
 .greeting__title {
   font-weight: 500;
   font-size: 36px;
@@ -984,6 +981,9 @@ body.theme-contrast {
   .greeting__title {
     font-size: calc(28px + 8 * ((100vw - 375px) / 297));
   }
+}
+.greeting__title:not(:last-child) {
+  margin-bottom: 24px;
 }
 .theme-default .greeting__title {
   color: var(--base-white);
@@ -1001,6 +1001,7 @@ body.theme-contrast {
   text-transform: uppercase;
   font-size: 0.8125rem;
   line-height: 1.23;
+  margin-top: 24px;
 }
 .theme-default .greeting__job {
   color: var(--base-purple);
