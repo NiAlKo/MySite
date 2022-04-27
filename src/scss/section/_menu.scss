@@ -94,12 +94,6 @@
     overflow: auto;
     transition: bottom 0.37s ease-in;
     z-index: 2;
-    @media screen and (orientation: portrait) {
-      height: auto;
-    }
-    @media screen and (orientation: landscape) {
-      height: 245px;
-    }
 
     @include theme("default", "background-color", var(--bg-mob_menu));
     @include theme("light", "background-color", var(--base-white));
@@ -123,6 +117,15 @@
       visibility: visible;
       border: none !important;
       @include theme("default", "background-color", transparent);
+    }
+
+    &.__mobail {
+      @media screen and (orientation: portrait) {
+        height: auto;
+      }
+      @media screen and (orientation: landscape) {
+        height: 245px;
+      }
     }
 
     &.__mobail .menu__link--download {

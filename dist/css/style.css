@@ -652,16 +652,6 @@ body.theme-contrast {
   transition: bottom 0.37s ease-in;
   z-index: 2;
 }
-@media screen and (orientation: portrait) {
-  .menu__body {
-    height: auto;
-  }
-}
-@media screen and (orientation: landscape) {
-  .menu__body {
-    height: 245px;
-  }
-}
 .theme-default .menu__body {
   background-color: var(--bg-mob_menu);
 }
@@ -701,6 +691,16 @@ body.theme-contrast {
   }
   .theme-default .menu__body {
     background-color: transparent;
+  }
+}
+@media screen and (orientation: portrait) {
+  .menu__body.__mobail {
+    height: auto;
+  }
+}
+@media screen and (orientation: landscape) {
+  .menu__body.__mobail {
+    height: 245px;
   }
 }
 .menu__body.__mobail .menu__link--download {
