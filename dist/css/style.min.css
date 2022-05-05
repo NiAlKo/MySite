@@ -1033,7 +1033,7 @@ body.theme-contrast {
     padding: 0 5px;
   }
 }
-.project-page-menu .menu__nav li:not(:first-child) {
+.project-page + .menu .menu__nav li:not(:first-child) {
   display: none;
 }
 
