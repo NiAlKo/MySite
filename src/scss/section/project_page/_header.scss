@@ -56,6 +56,10 @@
       &.__desktop {
         flex-wrap: wrap;
         display: flex;
+
+        & ~ #custom-select2 {
+          display: none;
+        }
       }
     }
   }
@@ -237,13 +241,13 @@
       height: 0;
       border-style: solid;
       border-width: 14px 8px 0 8px;
-
-      @include theme("default", "border-color", var(--alfa4-text) transparent transparent transparent);
-      @include theme("light", "border-color", var(--base-violet) transparent transparent transparent);
-      @include theme("contrast", "border-color", var(--base-purple) transparent transparent transparent);
+      border-color: var(--alfa4-text) transparent transparent transparent;
+      @include theme("light", "border-color", var(--alfa4-black) transparent transparent transparent);
 
       .__open & {
         transform: rotate(-180deg);
+        border-color: var(--base-white) transparent transparent transparent;
+        @include theme("light", "border-color", var(--base-black) transparent transparent transparent);
       }
     }
 

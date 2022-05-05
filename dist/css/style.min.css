@@ -179,7 +179,7 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
   /* ширина для вертикального скролла */
   height: 8px;
   /* высота для горизонтального скролла */
@@ -1033,10 +1033,6 @@ body.theme-contrast {
     padding: 0 5px;
   }
 }
-.project-page + .menu .menu__nav li:not(:first-child) {
-  display: none;
-}
-
 /*!=================-GREETING-=================!*/
 .greeting {
   padding-top: 48px;
@@ -1540,6 +1536,9 @@ body.theme-contrast {
     flex-wrap: wrap;
     display: flex;
   }
+  .header-project__custom-select.__desktop ~ #custom-select2 {
+    display: none;
+  }
 }
 .header-project__item {
   display: none;
@@ -1744,18 +1743,17 @@ body.theme-contrast {
   height: 0;
   border-style: solid;
   border-width: 14px 8px 0 8px;
-}
-.theme-default .input-custom-select__arrow::after {
   border-color: var(--alfa4-text) transparent transparent transparent;
 }
 .theme-light .input-custom-select__arrow::after {
-  border-color: var(--base-violet) transparent transparent transparent;
-}
-.theme-contrast .input-custom-select__arrow::after {
-  border-color: var(--base-purple) transparent transparent transparent;
+  border-color: var(--alfa4-black) transparent transparent transparent;
 }
 .__open .input-custom-select__arrow::after {
   transform: rotate(-180deg);
+  border-color: var(--base-white) transparent transparent transparent;
+}
+.theme-light .__open .input-custom-select__arrow::after {
+  border-color: var(--base-black) transparent transparent transparent;
 }
 @media (min-width: 991.98px) {
   .input-custom-select__arrow {
@@ -1763,6 +1761,10 @@ body.theme-contrast {
     height: 48px;
   }
 }
+section {
+  padding-bottom: 1500px;
+}
+
 /**======================-CONTACTS-=================*/
 .contacts {
   display: none;

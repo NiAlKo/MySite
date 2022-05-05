@@ -201,10 +201,6 @@
     }
   }
 
-&__years{
-
-}
-
   &__list {
     li {
       width: 100%;
@@ -359,15 +355,4 @@
 
   &__icon {
   }
-}
-
-.project-page {
-  & + .menu{
-     .menu__nav {
-    li:not(:first-child) {
-      display: none;
-    }
-  }
-  }
- 
 }

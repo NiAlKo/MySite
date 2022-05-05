@@ -37,19 +37,27 @@ document.addEventListener("click", function (evt) {
 });
 
 window.addEventListener("scroll", () => {
-	let scrollDistance = window.scrollY;
+	activePoint('section', '.menu__nav', '.menu__link', '__link--active');
+});
 
-	document.querySelectorAll("section").forEach((el, i) => {
-		if (el.offsetTop - document.querySelector(".menu__nav").clientHeight <= scrollDistance) {
-			document.querySelectorAll(".menu__nav a").forEach((el) => {
-				if (el.classList.contains("__link--active")) {
-					el.classList.remove("__link--active");
+function activePoint(element, classNameItem, classNameItemLink, activeLink) {
+	let scrollDistance = window.scrollY;
+	const sectionTeg = document.querySelectorAll(element);
+	const NameItem = document.querySelector(classNameItem);
+	const allItemLink = NameItem.querySelectorAll(classNameItemLink);
+	const allItemList = NameItem.querySelectorAll('li');
+
+	sectionTeg.forEach((el, i) => {
+		if (el.offsetTop - NameItem.clientHeight <= scrollDistance) {
+			allItemLink.forEach((el) => {
+				if (el.classList.contains(activeLink)) {
+					el.classList.remove(activeLink);
 				}
 			});
-			document.querySelectorAll(".menu__nav li")[i].querySelector("a").classList.add("__link--active");
+			allItemList[i].querySelector('a').classList.add(activeLink);
 		}
 	});
-});
+}
 
 // Обнаружение мобильного
 let isMobile = {
@@ -78,12 +86,12 @@ let isMobile = {
 	}
 };
 
-const activeLink = document.querySelectorAll(".__link--active");
-const menuLogo = document.querySelector(".menu__logo");
-const navigationLink = document.querySelectorAll(".menu__nav .menu__link");
+const activeLink = document.querySelectorAll('.__link--active');
+const menuLogo = document.querySelector('.menu__logo');
+const navigationLink = document.querySelectorAll('.menu__nav .menu__link');
 let mobail = false;
 
-window.addEventListener("resize", function () {
+window.addEventListener('resize', function () {
 	if (window.innerWidth < 991.98) {
 		mobail = true;
 	} else {
@@ -99,16 +107,16 @@ if (isMobile.any()) {
 
 function phoneMode(mobail) {
 	if (mobail == true) {
-		menuBody.classList.add("__mobail");
+		menuBody.classList.add('__mobail');
 		activeLink.forEach((el) => {
-			el.classList.remove("__link--active");
+			el.classList.remove('__link--active');
 		});
-		menuLogo.classList.add("__mobail", "__link--active");
-		toggleClass(navigationLink, "__mobail", "add");
+		menuLogo.classList.add('__mobail', '__link--active');
+		toggleClass(navigationLink, '__mobail', 'add');
 	} else {
-		menuLogo.classList.remove("__mobail");
-		menuBody.classList.remove("__mobail");
-		toggleClass(navigationLink, "__mobail", "kill");
+		menuLogo.classList.remove('__mobail');
+		menuBody.classList.remove('__mobail');
+		toggleClass(navigationLink, '__mobail', 'kill');
 	}
 }
 
