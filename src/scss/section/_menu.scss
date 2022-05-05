@@ -24,6 +24,7 @@
     @include theme("default", "background-color", var(--bg-mob_menu));
     @include theme("light", "background-color", var(--base-white));
     @include theme("contrast", "background-color", var(--base-black));
+
     @include theme("light", "border", 1px solid var(--alfa1-black));
     @include theme("contrast", "border", 1px solid #9cdcfe);
 
@@ -353,5 +354,13 @@
   }
 
   &__icon {
+  }
+}
+
+.project-page-menu {
+  .menu__nav {
+    li:not(:first-child) {
+      display: none;
+    }
   }
 }

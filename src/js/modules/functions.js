@@ -26,3 +26,46 @@ export function ibg() {
 	}
 }
 ibg();
+
+import { customSelect } from "./custom_select.js";
+
+const selectTechnologies = new customSelect('#custom-select', {
+	selectedValue: '',
+	placeholder: 'технология',
+
+	data: [
+		{ value: 'javascript', textItem: 'javascript' },
+		{ value: 'vue', textItem: 'vue.js' },
+		{ value: 'html_css', textItem: 'html/css' },
+		{ value: 'next_js', textItem: 'next.js' },
+		{ value: 'php', textItem: 'php' },
+	],
+
+	onSelect(item) {
+		console.log('selected item', item)
+	}
+});
+
+const selectTypeProject = new customSelect('#custom-select2', {
+	selectedValue: 'all-project',
+	placeholder: '',
+
+	data: [
+		{ value: 'all-project', textItem: 'все проекты' },
+		{ value: 'ecom', textItem: 'ecom' },
+		{ value: 'landing', textItem: 'landing' },
+		{ value: 'app', textItem: 'app' },
+	],
+	onSelect(item) {
+		console.log('selected item', item)
+	}
+});
+
+const btn = document.querySelector('#custom-select-btn');
+let arraySelect = [selectTechnologies, selectTypeProject];
+btn.addEventListener('click', () => {
+	arraySelect.forEach((el) => {
+		el.reset()
+	})
+
+})

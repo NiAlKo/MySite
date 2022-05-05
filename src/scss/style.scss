@@ -23,6 +23,8 @@ $font-family: "SourceCodePro", sans-serif;
 
 //**======================-ОБНУЛЕНИЕ, ОБЩИЕ_ПАРАМЕТРЫ-=================*/
 @import "./base/reset";
+@import "./base/scroll";
+
 body {
   position: relative;
   @extend %all-text;
@@ -30,7 +32,7 @@ body {
   @include themeWith("default", "color", var(--text));
   @include themeWith("light", "color", var(--text-black));
   @include themeWith("contrast", "color", var(--text));
-  background-color: var(--bg);
+
   @include themeWith("default", "background-color", var(--bg));
   @include themeWith("light", "background-color", var(--base-white));
   @include themeWith("contrast", "background-color", var(--base-black));
@@ -76,18 +78,16 @@ body {
   }
 }
 
-.main-page {
+.main-page,
+.project-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100%;
   overflow: hidden;
-  @media (min-width: ($md2 + px)) {
-    max-width: 736px;
-  }
-  @media (min-width: 1980px) {
-    max-width: 1024px;
-  }
+}
+
+.main-page {
   &__greeting {
   }
 
@@ -98,6 +98,7 @@ body {
       margin-bottom: 24px;
     }
   }
+
   &__skills,
   &__about,
   &__experience,
@@ -116,10 +117,29 @@ body {
       padding-bottom: 208px;
     }
   }
+
+  @media (min-width: ($md2 + px)) {
+    max-width: 736px;
+  }
+
+  @media (min-width: 1980px) {
+    max-width: 1024px;
+  }
 }
+
+.project-page {
+  padding-top: 48px;
+  &__header {
+  }
+  @media (min-width: ($md2 + px)) {
+    max-width: 1088px;
+  }
+}
+
 .footer {
   flex: 0 0 auto;
 }
+
 //**======================-НЕЗАВИСИМЫЕ_БЛОКИ-=================*/
 @import "./base/ui";
 //**======================-ПОДКЛЮЧЕНИЕ_СТИЛЕЙ-=================*/
@@ -129,6 +149,8 @@ body {
 @import "./section/about";
 @import "./section/experience";
 @import "./section/projects";
-@import "./section/contacts";
 
+@import "./section/project_page/header";
+
+@import "./section/contacts";
 @import "./section/footer";

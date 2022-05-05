@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="shortcut icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
+  <title>Страница проекта</title>
+  <meta
+    name="description"
+    content="Портфолио html верстальщика Николая Конкина. Работы по адаптивной и фиксированной верстке сайтов, верстке Landing Page, новостных порталов и интернет магазинов."
+  />
+  <meta name="subject" content="Портфолио html верстальщика | Frontend Dev" />
+  <meta name="keywords" content="верстка, верстальщик, html верстальщик, портфолио, примеры верстки, Конкин Николай, NiAlKo" />
+  <meta name="author" content="Конкин Николай | NiAlK0" />
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <meta name="google" content="nositelinkssearchbox" />
+  <meta name="google" content="notranslate" />
+</head>
+
+  <body class="theme-default">
+    <div class="wrapper">
+      <main class="project-page project-page__container">
+        <header class="project-page__header header-project">
+  <form class="header-project__form" id="select-form">
+    <fieldset class="header-project__custom-select __desktop">
+      <input class="header-project__item" type="radio" name="project-type" id="all-project" checked />
+      <label for="all-project">все проекты</label>
+
+      <input class="header-project__item" type="radio" value="item-ecom" name="project-type" id="item-ecom" />
+      <label for="item-ecom">ecom</label>
+
+      <input class="header-project__item" type="radio" value="item-landing" name="project-type" id="item-landing" />
+      <label for="item-landing">landing</label>
+
+      <input class="header-project__item" type="radio" value="item-app" name="project-type" id="item-app" />
+      <label for="item-app">app</label>
+    </fieldset>
+    <div class="header-project__custom-select" id="custom-select"></div>
+    <div class="header-project__custom-select" id="custom-select2"></div>
+    <button class="header-project__btn custom-select__btn" type="reset" id="custom-select-btn">Сбросить</button>
+  </form>
+</header>
+ <article class="contacts">
+  <h2 class="contacts__title __h2">Контакты</h2>
+  <ul class="contacts__list">
+    <li class="contacts__item"><span>email</span><a href="mailto:nialko@nialko.ru" target="_blank">nialko@nialko.ru</a></li>
+    <li class="contacts__item"><span>telegram</span><a href="https://t.me/NiAlK0" target="_blank">@NiAlK0</a></li>
+    <li class="contacts__item"><span>instagram</span><a href="https://www.instagram.com/nialk0" target="_blank">nialk0</a></li>
+    <li class="contacts__item"><span>GitHub</span><a href="https://github.com/NiAlKo" target="_blank">NiAlKo</a></li>
+  </ul>
+  <a class="contacts__link border-link" href="files/CV_Konkin_Nikolai_Alexandrovich.pdf" target="_blank" download>
+    Скачать резюме
+    <span></span>
+  </a>
+  <div class="contacts__theme-menu theme-menu-contacts">
+    <ul class="theme-menu-contacts__list menu__theme">
+      <li><a class="menu__link menu__link--active theme-default-link">Dark</a></li>
+      <li><a class="menu__link theme-light-link">Light</a></li>
+      <li><a class="menu__link theme-contrast-link">Contrast</a></li>
+    </ul>
+  </div>
+</article>
+ <footer class="footer">
+  <div class="footer__copy">© 2022 Nikolay Konkin</div>
+</footer>
+
+      </main>
+      <aside class="menu project-page-menu">
+  <div class="menu__container">
+    <a class="menu__logo menu__link __link--active" href="#home">nialko.ru</a>
+    <div class="menu__body">
+      <div class="menu__column-info">
+        <nav class="menu__nav">
+          <ul class="menu__list">
+            <li>
+              <a class="menu__logo menu__link __link--active" href="#home">nialko.ru</a>
+            </li>
+            <li><a class="menu__link" href="#skills">Навыки</a></li>
+            <li><a class="menu__link" href="#about">обо мне</a></li>
+            <li><a class="menu__link" href="#experience">опыт</a></li>
+            <li><a class="menu__link" href="#projects">проекты</a></li>
+          </ul>
+        </nav>
+
+        <div class="menu__column-years">
+          <ul class="menu__list">
+            <li><a class="menu__link" href="#2023">2023</a></li>
+            <li><a class="menu__link" href="#2022">2022</a></li>
+          </ul>
+        </div>
+
+        <ul class="menu__list menu__contacts">
+          <li><a class="menu__link" href="mailto:nialko@nialko.ru" target="_blank">email</a></li>
+          <li><a class="menu__link" href="https://www.instagram.com/nialk0" target="_blank">Instagram</a></li>
+          <li><a class="menu__link" href="https://t.me/NiAlK0" target="_blank">Telegram</a></li>
+          <li><a class="menu__link" href="https://github.com/NiAlKo" target="_blank">GitHub</a></li>
+        </ul>
+        <a class="menu__link menu__link--download" href="files/CV_Konkin_Nikolai_Alexandrovich.pdf" target="_blank" download>
+          [Скачать резюме]
+          <span>PDF/351KB</span>
+        </a>
+      </div>
+
+      <div class="menu__column-controls">
+        <ul class="menu__list menu__theme">
+          <li><a class="menu__link menu__link--active theme-default-link">Dark</a></li>
+          <li><a class="menu__link theme-light-link">Light</a></li>
+          <li><a class="menu__link theme-contrast-link">Contrast</a></li>
+        </ul>
+
+        <!-- <ul class="menu__lang menu__list">
+          <li><a class="menu__link menu__link--active" href="#">ru</a></li>
+          <span>/</span>
+          <li><a class="menu__link" href="#">en</a></li>
+        </ul> -->
+      </div>
+    </div>
+    <button class="menu__icon icon-menu" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</aside>
+ <script src="js/app.min.js"></script>
+
+    </div>
+  </body>
+</html>
