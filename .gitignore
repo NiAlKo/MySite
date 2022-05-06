@@ -1,5 +1,6 @@
 .vscode
 dist/css/style.css
+src/info/info.txt
 gulp
 node_modules
 package.json

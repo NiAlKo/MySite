@@ -19,11 +19,11 @@ export function isWebp() {
 // Adaptive img
 export function ibg() {
 	const ibg = document.querySelectorAll(".__ibg");
-	for (var i = 0; i < ibg.length; i++) {
-		if (ibg[i].querySelector("img")) {
-			ibg[i].style.backgroundImage = "url(" + ibg[i].querySelector("img").getAttribute("src") + ")";
+	ibg.forEach(el => {
+		if (el.querySelector('img')) {
+			el.style.backgroundImage = "url(" + el.querySelector("img").getAttribute("src") + ")";
 		}
-	}
+	});
 }
 ibg();
 
@@ -62,13 +62,17 @@ if (document.querySelector('#custom-select')) {
 		}
 	});
 
-	const btn = document.querySelector('#custom-select-btn');
-	let arraySelect = [selectTechnologies, selectTypeProject];
-	btn.addEventListener('click', () => {
-		arraySelect.forEach((el) => {
-			el.reset()
-		})
+	function BtnReset(btnName, ...all) {
+		const ButtonReset = document.querySelector(btnName);
 
-	})
+		for (let select of all) {
+			ButtonReset.addEventListener('click', () => {
+				select.reset()
+				ButtonReset.style.display = 'none';
+			});
+		}
+	}
+
+	BtnReset('#custom-select-btn', selectTechnologies, selectTypeProject);
 
 }
