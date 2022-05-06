@@ -55,10 +55,13 @@ export class customSelect {
 
 	clickHandler(evt) {
 		const { type } = evt.target.dataset;
+
 		if (type === 'select-input') {
 			this.toggle();
 		} else if (type === 'select-item') {
 			const value = evt.target.dataset.value
+			const btnSelect = document.querySelector('#custom-select-btn');
+			btnSelect.style.display = 'block';
 			// console.log('value', value)
 			this.select(value);
 		} else if (type === 'select-backdrop') {
@@ -86,7 +89,6 @@ export class customSelect {
 
 	toggle() {
 		this.isOpen ? this.close() : this.open();
-
 	}
 
 	open() {

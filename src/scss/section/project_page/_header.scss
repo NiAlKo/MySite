@@ -5,11 +5,9 @@
     @include theme("default", "color", var(--base-white));
     @include theme("light", "color", var(--base-black));
     @include theme("contrast", "color", var(--base-white));
-  }
 
-  &__form {
     display: flex;
-    flex-direction: column;
+
     font-weight: 500;
     max-width: 800px;
     font-size: rem(28);
@@ -19,6 +17,7 @@
     @media (min-width: ($md2 + px)) {
       font-size: rem(36);
       line-height: 1.33;
+      flex-direction: column;
 
       & .__desktop {
         @include theme("default", "color", var(--alfa4-text));
@@ -36,18 +35,18 @@
     box-shadow: none;
     border: none;
 
-    &:last-of-type:not(:first-of-type) {
-      margin-bottom: 48px;
-    }
+    // &:last-of-type:not(:first-of-type) {
+    //   margin-bottom: 48px;
+    // }
 
     &.__desktop {
       display: none;
     }
 
     @media (min-width: ($md2 + px)) {
-      &:last-of-type:not(:first-of-type) {
-        margin-bottom: 20px;
-      }
+      // &:last-of-type:not(:first-of-type) {
+      //   margin-bottom: 20px;
+      // }
 
       &.__mobail:first-of-type {
         display: none;
@@ -206,6 +205,7 @@
     }
   }
   &__btn {
+    display: none;
     width: fit-content;
     font-weight: 400;
     font-size: rem(13);
