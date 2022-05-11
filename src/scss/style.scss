@@ -128,11 +128,21 @@ body {
 }
 
 .project-page {
+  flex-grow: 1;
   padding-top: 48px;
+
+  &__years {
+    padding-top: 16px;
+    margin-top: -16px;
+    margin-bottom: 72px;
+  }
+
   &__header {
   }
+
   @media (min-width: ($md2 + px)) {
     max-width: 1088px;
+    margin-right: 224px;
   }
 }
 

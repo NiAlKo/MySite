@@ -1,24 +1,24 @@
 // SLIDER
-let sliders = document.querySelectorAll(".__swiper");
+let sliders = document.querySelectorAll('.__swiper');
 
 if (sliders) {
 	for (let i = 0; i < sliders.length; i++) {
 		let slider = sliders[i];
-		if (!slider.classList.contains("swiper-bild")) {
+		if (!slider.classList.contains('swiper-bild')) {
 			let sliderItems = slider.children;
 			if (sliderItems) {
 				for (let i = 0; i < sliderItems.length; i++) {
 					let element = sliderItems[i];
-					element.classList.add("swiper-slide");
+					element.classList.add('swiper-slide');
 				}
 			}
-			slider.classList.add("swiper-bild");
+			slider.classList.add('swiper-bild');
 		}
 	}
 }
 
-if (".item-projects__slider") {
-	var swiper = new Swiper('.item-projects__slider', {
+if ('.item-projects__slider') {
+	const swiper = new Swiper('.item-projects__slider', {
 		slidesPerView: 1,
 		spaceBetween: 32,
 		watchOverflow: true,
@@ -51,7 +51,7 @@ if (".item-projects__slider") {
 			el.classList.add('swiper-paused');
 
 			const activeNavItem = el.querySelector('.swiper-pagination-bullet-active');
-			activeNavItem.style.animationPlayState = "paused";
+			activeNavItem.style.animationPlayState = 'paused';
 		}
 	}, true);
 

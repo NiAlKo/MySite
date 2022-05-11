@@ -1,15 +1,17 @@
 /**======================-PROJECT-HEADER-=================*/
 
 .header-project {
+  margin-bottom: 48px;
   &__form {
     @include theme("default", "color", var(--base-white));
     @include theme("light", "color", var(--base-black));
     @include theme("contrast", "color", var(--base-white));
 
-    display: flex;
-
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
     font-weight: 500;
-    max-width: 800px;
     font-size: rem(28);
     line-height: 1.14;
     letter-spacing: -0.02em;
@@ -18,6 +20,8 @@
       font-size: rem(36);
       line-height: 1.33;
       flex-direction: column;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr) 0.563fr;
 
       & .__desktop {
         @include theme("default", "color", var(--alfa4-text));
@@ -83,6 +87,7 @@
   }
 
   &__btn {
+    margin-left: auto;
     transition: all 0.1s ease-out;
     @include theme("default", "color", var(--base-purple));
     @include theme("light", "color", var(--base-crimson));
@@ -95,9 +100,18 @@
         @include theme("contrast", "color", var(--base-purple));
       }
     }
+
     &:active {
       opacity: 0.3;
     }
+
+    @media (min-width: ($md2 + px)) {
+      margin: 0;
+      height: 100%;
+    }
+  }
+  @media (min-width: ($md2 + px)) {
+    margin-bottom: 36px;
   }
 }
 
