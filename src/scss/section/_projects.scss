@@ -50,23 +50,28 @@
   }
 
   &__info {
-    display: inline-flex;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
     align-items: center;
   }
 
   &__title {
     font-weight: 400;
-    margin-right: 8px;
+    margin-right: 4px;
     color: var(--base-white);
     @include theme("light", "color", var(--base-black));
   }
 
   &__tegs {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    & > :not(:last-child) {
-      margin-right: 4px;
-    }
+    gap: 4px;
+    margin-right: auto;
+    // & > :not(:last-child) {
+    //   margin-right: 4px;
+    // }
   }
 
   &__date,
@@ -178,6 +183,7 @@
       z-index: -1;
     }
   }
+
   &__text {
   }
 }
