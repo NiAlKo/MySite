@@ -1,19 +1,25 @@
-const getTamplate = (data = [], placeholder, selectedValue) => {
+const getTamplate = (data = [], placeholder, selectedValue, desktop) => {
 	let text = placeholder ?? 'Select item please';
-
+	console.log(desktop)
 	const itemsSelect = data.map(item => {
 		let classItem = '';
+		let classDesktop = '';
 		if (item.value === selectedValue) {
 			text = item.textItem;
 			classItem = 'selected';
 		}
+		if (desktop) {
+			classDesktop = '__desktop';
+		}
 
 		return `
-		<li class="custom-select__item ${classItem}" data-type="select-item" data-value=${item.value}>${item.textItem}</li>
+		<li class="custom-select__item ${classDesktop} ${classItem}" data-type="select-item" data-value=${item.value}>${item.textItem}</li>
 		`
+
 	});
 
-	return `
+	if (!desktop) {
+		return `
 	<div class="custom-select__backdrop" data-type="select-backdrop"></div>
 	<div class="custom-select__input input-custom-select" data-type="select-input">
 	<span class="input-custom-select__text" data-type="select-input-text">${text}</span>
@@ -25,6 +31,14 @@ const getTamplate = (data = [], placeholder, selectedValue) => {
 		</ul>
 	</div>
 	`
+	} else if (desktop) {
+		return `
+	<ul class="custom-select__list">
+		${itemsSelect.join('')}
+	</ul>
+`
+	}
+
 }
 
 export class customSelect {

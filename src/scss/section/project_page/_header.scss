@@ -57,34 +57,22 @@
       }
 
       &.__desktop {
-        flex-wrap: wrap;
-        display: flex;
-
+        display: block;
         & ~ #custom-select2 {
           display: none;
+        }
+        ul {
+          flex-wrap: wrap;
+          display: flex;
         }
       }
     }
   }
 
-  &__item {
-    display: none;
+  // &__item {
+  //   display: none;
 
-    & + label {
-      cursor: pointer;
-      &:not(:last-of-type):after {
-        content: "/";
-        @include theme("default", "color", var(--alfa4-text));
-        @include theme("light", "color", var(--alfa4-black));
-        @include theme("contrast", "color", var(--alfa4-text));
-      }
-    }
-
-    &:checked + label {
-      color: var(--base-white);
-      @include theme("light", "color", var(--base-crimson));
-    }
-  }
+  // }
 
   &__btn {
     margin-left: auto;
@@ -162,6 +150,44 @@
     }
   }
 
+  &__item {
+    cursor: pointer;
+    &:hover,
+    &.selected {
+      @include theme("default", "background-color", var(--base-purple));
+      @include theme("light", "background-color", var(--base-crimson));
+      @include theme("contrast", "background-color", var(--base-blue));
+
+      @include theme("default", "color", var(--bg-mob_menu));
+      @include theme("light", "color", var(--base-white));
+      @include theme("contrast", "color", var(--base-black));
+
+      transition: background-color 0.1s ease-in;
+    }
+
+    &.__desktop {
+      padding: 0;
+      &:not(:last-child):after {
+        content: "/";
+        @include theme("default", "color", var(--alfa4-text));
+        @include theme("light", "color", var(--alfa4-black));
+        @include theme("contrast", "color", var(--alfa4-text));
+      }
+
+      &:hover,
+      &.selected {
+        background-color: transparent;
+        color: var(--base-white);
+        @include theme("light", "color", var(--base-black));
+      }
+    }
+
+    &.__desktop &.selected {
+      color: var(--base-white);
+      @include theme("light", "color", var(--base-crimson));
+    }
+  }
+
   &__input {
     display: inline-flex;
     align-items: center;
@@ -203,21 +229,6 @@
     background-color: transparent;
   }
 
-  &__item {
-    cursor: pointer;
-    &:hover,
-    &.selected {
-      @include theme("default", "background-color", var(--base-purple));
-      @include theme("light", "background-color", var(--base-crimson));
-      @include theme("contrast", "background-color", var(--base-blue));
-
-      @include theme("default", "color", var(--bg-mob_menu));
-      @include theme("light", "color", var(--base-white));
-      @include theme("contrast", "color", var(--base-black));
-
-      transition: background-color 0.1s ease-in;
-    }
-  }
   &__btn {
     display: none;
     width: fit-content;
