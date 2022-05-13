@@ -67,7 +67,7 @@ if (document.querySelector('#custom-select')) {
 
 		for (let select of all) {
 			ButtonReset.addEventListener('click', () => {
-				select.reset()
+				select.reset();
 				ButtonReset.style.display = 'none';
 			});
 		}

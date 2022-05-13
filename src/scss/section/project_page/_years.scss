@@ -15,6 +15,8 @@
     }
     &__no-data {
       color: var(--alfa2);
+      @include theme("light", "color", var(--alfa2-black));
+      animation: flash 6.9s ease-in-out infinite;
     }
 
     &__column {
@@ -25,10 +27,6 @@
 
     &__info {
       grid-area: info;
-      flex-wrap: wrap;
-      // @media (max-width: ($md4 + px)) {
-      //   padding: 0 24px;
-      // }
 
       &:not(:last-child) {
         margin-bottom: 16px;
@@ -37,11 +35,9 @@
 
     &__title {
       white-space: nowrap;
-      // margin-bottom: 8px;
     }
 
     &__text {
-      // grid-area: text;
       order: 2;
       letter-spacing: -0.02em;
     }
@@ -49,19 +45,16 @@
     &__links {
       grid-area: links;
       order: 1;
-      margin-bottom: 0 !important;
+      margin-bottom: 16px;
 
       & > * {
         width: fit-content;
       }
 
-      & > :not(:last-child) {
-        margin-bottom: 8px;
-      }
-
       @media (min-width: ($md2 + px)) {
         display: flex;
         flex-direction: column;
+        margin-bottom: 0 !important;
       }
     }
 
@@ -99,6 +92,7 @@
         background-size: 10px 1px;
         background-repeat: repeat-x;
         background-image: linear-gradient(to left, transparent 40%, var(--alfa2) 40%);
+        @include theme("light", "background-image", linear-gradient(to left, transparent 40%, var((--alfa2-black)) 40%));
       }
 
       &::before {
@@ -122,6 +116,7 @@
         background-size: 1px 18px;
         background-repeat: repeat-y;
         background-image: linear-gradient(to top, var(--alfa2) 80%, transparent 5%);
+        @include theme("light", "background-image", linear-gradient(to top, var(--alfa2-black) 80%, transparent 5%));
       }
 
       span::after {
@@ -143,13 +138,7 @@
       grid-template-areas:
         "info slider slider"
         "column slider slider";
-      // &__column {
-      //   order: 1;
-      //   margin-right: 32px;
-      //   & .item-projects__info {
-      //     display: inline-flex;
-      //   }
-      // }
+
       &__text {
         min-width: 320px;
         order: 1;
@@ -158,6 +147,11 @@
 
       &__links {
         order: 2;
+        margin-bottom: 0;
+
+        & > :not(:last-child) {
+          margin-bottom: 8px;
+        }
       }
 
       &__slider,
@@ -167,8 +161,6 @@
       }
 
       &__slider {
-        // order: 2;
-
         &--disabled {
           & .item-projects__slide {
             padding-bottom: 62.856%;

@@ -33,7 +33,7 @@
       @include theme("light", "color", var(--base-black));
     }
 
-    & > * {
+    & > *:not(:last-child) {
       margin-bottom: 2px;
     }
   }
