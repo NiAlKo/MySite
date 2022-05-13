@@ -29,8 +29,25 @@ ibg();
 
 import { customSelect } from "./custom_select.js";
 
-if (document.querySelector('#custom-select')) {
-	const selectTechnologies = new customSelect('#custom-select', {
+if (document.querySelector('.header-project__custom-select')) {
+
+	const selectTypeProjectDesktop = new customSelect('#custom-select', {
+		selectedValue: 'all-project',
+		placeholder: '',
+		desktop: true,
+
+		data: [
+			{ value: 'all-project', textItem: 'все проекты' },
+			{ value: 'ecom', textItem: 'ecom' },
+			{ value: 'landing', textItem: 'landing' },
+			{ value: 'app', textItem: 'app' },
+		],
+		onSelect(item) {
+			console.log('selected item:', item)
+		}
+	});
+
+	const selectTechnologies = new customSelect('#custom-select1', {
 		selectedValue: '',
 		placeholder: 'технология',
 
@@ -73,6 +90,6 @@ if (document.querySelector('#custom-select')) {
 		}
 	}
 
-	BtnReset('#custom-select-btn', selectTechnologies, selectTypeProject);
+	BtnReset('#custom-select-btn', selectTypeProjectDesktop, selectTechnologies, selectTypeProject);
 
 }

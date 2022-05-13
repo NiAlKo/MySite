@@ -1553,36 +1553,15 @@ body.theme-contrast {
     display: none;
   }
   .header-project__custom-select.__desktop {
-    flex-wrap: wrap;
-    display: flex;
+    display: block;
   }
   .header-project__custom-select.__desktop ~ #custom-select2 {
     display: none;
   }
-}
-.header-project__item {
-  display: none;
-}
-.header-project__item + label {
-  cursor: pointer;
-}
-.header-project__item + label:not(:last-of-type):after {
-  content: "/";
-}
-.theme-default .header-project__item + label:not(:last-of-type):after {
-  color: var(--alfa4-text);
-}
-.theme-light .header-project__item + label:not(:last-of-type):after {
-  color: var(--alfa4-black);
-}
-.theme-contrast .header-project__item + label:not(:last-of-type):after {
-  color: var(--alfa4-text);
-}
-.header-project__item:checked + label {
-  color: var(--base-white);
-}
-.theme-light .header-project__item:checked + label {
-  color: var(--base-crimson);
+  .header-project__custom-select.__desktop ul {
+    flex-wrap: wrap;
+    display: flex;
+  }
 }
 .header-project__btn {
   margin-left: auto;
@@ -1672,6 +1651,58 @@ body.theme-contrast {
     padding: 8px 16px 8px 16px;
   }
 }
+.custom-select__item {
+  cursor: pointer;
+}
+.custom-select__item:hover, .custom-select__item.selected {
+  transition: background-color 0.1s ease-in;
+}
+.theme-default .custom-select__item:hover, .theme-default .custom-select__item.selected {
+  background-color: var(--base-purple);
+}
+.theme-light .custom-select__item:hover, .theme-light .custom-select__item.selected {
+  background-color: var(--base-crimson);
+}
+.theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.selected {
+  background-color: var(--base-blue);
+}
+.theme-default .custom-select__item:hover, .theme-default .custom-select__item.selected {
+  color: var(--bg-mob_menu);
+}
+.theme-light .custom-select__item:hover, .theme-light .custom-select__item.selected {
+  color: var(--base-white);
+}
+.theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.selected {
+  color: var(--base-black);
+}
+.custom-select__item.__desktop {
+  padding: 0;
+}
+.custom-select__item.__desktop:not(:last-child):after {
+  content: "/";
+}
+.theme-default .custom-select__item.__desktop:not(:last-child):after {
+  color: var(--alfa4-text);
+}
+.theme-light .custom-select__item.__desktop:not(:last-child):after {
+  color: var(--alfa4-black);
+}
+.theme-contrast .custom-select__item.__desktop:not(:last-child):after {
+  color: var(--alfa4-text);
+}
+.custom-select__item.__desktop:hover, .custom-select__item.__desktop.selected {
+  background-color: transparent;
+  color: var(--base-white);
+}
+.theme-light .custom-select__item.__desktop:hover, .theme-light .custom-select__item.__desktop.selected {
+  color: var(--base-black);
+}
+.custom-select__item.__desktop .custom-select__item.selected {
+  color: var(--base-white);
+}
+.theme-light .custom-select__item.__desktop .custom-select__item.selected {
+  color: var(--base-crimson);
+}
 .custom-select__input {
   display: inline-flex;
   align-items: center;
@@ -1716,30 +1747,6 @@ body.theme-contrast {
   right: 0;
   left: 0;
   background-color: transparent;
-}
-.custom-select__item {
-  cursor: pointer;
-}
-.custom-select__item:hover, .custom-select__item.selected {
-  transition: background-color 0.1s ease-in;
-}
-.theme-default .custom-select__item:hover, .theme-default .custom-select__item.selected {
-  background-color: var(--base-purple);
-}
-.theme-light .custom-select__item:hover, .theme-light .custom-select__item.selected {
-  background-color: var(--base-crimson);
-}
-.theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.selected {
-  background-color: var(--base-blue);
-}
-.theme-default .custom-select__item:hover, .theme-default .custom-select__item.selected {
-  color: var(--bg-mob_menu);
-}
-.theme-light .custom-select__item:hover, .theme-light .custom-select__item.selected {
-  color: var(--base-white);
-}
-.theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.selected {
-  color: var(--base-black);
 }
 .custom-select__btn {
   display: none;
