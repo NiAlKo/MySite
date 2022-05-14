@@ -38,8 +38,8 @@ if (document.querySelector('.header-project__custom-select')) {
 
 		data: [
 			{ value: 'all-project', textItem: 'все проекты' },
-			{ value: 'ecom', textItem: 'ecom' },
 			{ value: 'landing', textItem: 'landing' },
+			{ value: 'store-market', textItem: 'store market' },
 			{ value: 'app', textItem: 'app' },
 		],
 		onSelect(item) {
@@ -70,8 +70,8 @@ if (document.querySelector('.header-project__custom-select')) {
 
 		data: [
 			{ value: 'all-project', textItem: 'все проекты' },
-			{ value: 'ecom', textItem: 'ecom' },
 			{ value: 'landing', textItem: 'landing' },
+			{ value: 'store-market', textItem: 'store market' },
 			{ value: 'app', textItem: 'app' },
 		],
 		onSelect(item) {

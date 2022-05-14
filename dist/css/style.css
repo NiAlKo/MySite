@@ -1654,25 +1654,25 @@ body.theme-contrast {
 .custom-select__item {
   cursor: pointer;
 }
-.custom-select__item:hover, .custom-select__item.selected {
+.custom-select__item:hover, .custom-select__item.__selected {
   transition: background-color 0.1s ease-in;
 }
-.theme-default .custom-select__item:hover, .theme-default .custom-select__item.selected {
+.theme-default .custom-select__item:hover, .theme-default .custom-select__item.__selected {
   background-color: var(--base-purple);
 }
-.theme-light .custom-select__item:hover, .theme-light .custom-select__item.selected {
+.theme-light .custom-select__item:hover, .theme-light .custom-select__item.__selected {
   background-color: var(--base-crimson);
 }
-.theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.selected {
+.theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.__selected {
   background-color: var(--base-blue);
 }
-.theme-default .custom-select__item:hover, .theme-default .custom-select__item.selected {
+.theme-default .custom-select__item:hover, .theme-default .custom-select__item.__selected {
   color: var(--bg-mob_menu);
 }
-.theme-light .custom-select__item:hover, .theme-light .custom-select__item.selected {
+.theme-light .custom-select__item:hover, .theme-light .custom-select__item.__selected {
   color: var(--base-white);
 }
-.theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.selected {
+.theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.__selected {
   color: var(--base-black);
 }
 .custom-select__item.__desktop {
@@ -1690,11 +1690,11 @@ body.theme-contrast {
 .theme-contrast .custom-select__item.__desktop:not(:last-child):after {
   color: var(--alfa4-text);
 }
-.custom-select__item.__desktop:hover, .custom-select__item.__desktop.selected {
+.custom-select__item.__desktop:hover, .custom-select__item.__desktop.__selected {
   background-color: transparent;
   color: var(--base-white);
 }
-.theme-light .custom-select__item.__desktop:hover, .theme-light .custom-select__item.__desktop.selected {
+.theme-light .custom-select__item.__desktop:hover, .theme-light .custom-select__item.__desktop.__selected {
   color: var(--base-black);
 }
 .custom-select__item.__desktop .custom-select__item.selected {

@@ -153,7 +153,7 @@
   &__item {
     cursor: pointer;
     &:hover,
-    &.selected {
+    &.__selected {
       @include theme("default", "background-color", var(--base-purple));
       @include theme("light", "background-color", var(--base-crimson));
       @include theme("contrast", "background-color", var(--base-blue));
@@ -175,7 +175,7 @@
       }
 
       &:hover,
-      &.selected {
+      &.__selected {
         background-color: transparent;
         color: var(--base-white);
         @include theme("light", "color", var(--base-black));

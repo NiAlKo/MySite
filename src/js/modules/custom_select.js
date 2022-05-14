@@ -6,7 +6,7 @@ const getTamplate = (data = [], placeholder, selectedValue, desktop) => {
 		let classDesktop = '';
 		if (item.value === selectedValue) {
 			text = item.textItem;
-			classItem = 'selected';
+			classItem = '__selected';
 		}
 		if (desktop) {
 			classDesktop = '__desktop';
@@ -56,9 +56,9 @@ export class customSelect {
 	}
 
 	#render() {
-		const { data, placeholder } = this.options;
+		const { data, placeholder, desktop } = this.options;
 		this.$element.classList.add('custom-select');
-		this.$element.innerHTML = getTamplate(data, placeholder, this.selectedValue);
+		this.$element.innerHTML = getTamplate(data, placeholder, this.selectedValue, desktop);
 	}
 
 	#setup() {
@@ -92,11 +92,13 @@ export class customSelect {
 
 	select(value) {
 		this.selectedValue = value;
-		this.$inputText.textContent = this.current.textItem;
+		if (this.$inputText) {
+			this.$inputText.textContent = this.current.textItem;
+		}
 		this.$element.querySelectorAll('[data-type="select-item"]').forEach(element => {
-			element.classList.remove('selected');
+			element.classList.remove('__selected');
 		});
-		this.$element.querySelector(`[data-value="${value}"]`).classList.add('selected');
+		this.$element.querySelector(`[data-value="${value}"]`).classList.add('__selected');
 		this.options.onSelect ? this.options.onSelect(this.current) : null;
 		this.close();
 	}
@@ -113,20 +115,28 @@ export class customSelect {
 		this.$element.classList.remove('__open');
 	}
 
+	filter() {
+
+	}
+
 	reset() {
 		const { data, selectedValue, placeholder } = this.options;
 		this.$element.querySelectorAll('[data-type="select-item"]').forEach(element => {
-			element.classList.remove('selected');
-		});
-
-		data.map(item => {
-			if (item.value === selectedValue && !placeholder) {
-				this.$inputText.textContent = item.textItem;
-			}
+			element.classList.remove('__selected');
+			data.map(item => {
+				if (item.value === selectedValue && !placeholder) {
+					this.$element.querySelector(`[data-value="${item.value}"]`).classList.add('__selected');
+					if (this.$inputText) {
+						this.$inputText.textContent = item.textItem;
+					}
+				}
+			});
 		});
 
 		if (placeholder) {
-			this.$inputText.textContent = placeholder;
+			if (this.$inputText) {
+				this.$inputText.textContent = placeholder;
+			}
 		}
 	}
 
