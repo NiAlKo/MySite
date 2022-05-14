@@ -43,7 +43,17 @@ if (document.querySelector('.header-project__custom-select')) {
 			{ value: 'app', textItem: 'app' },
 		],
 		onSelect(item) {
-			console.log('selected item:', item)
+			document.querySelectorAll('.item-projects').forEach(el => {
+				el.classList.remove('__hidden');
+				if (item.value !== el.dataset.itemType) {
+					el.classList.add('__hidden');
+				}
+				if (item.value === 'all-project') {
+					el.classList.remove('__hidden');
+				}
+				// console.log('selected item:', item)
+			})
+
 		}
 	});
 
@@ -60,7 +70,14 @@ if (document.querySelector('.header-project__custom-select')) {
 		],
 
 		onSelect(item) {
-			console.log('selected item', item)
+			document.querySelectorAll('.item-projects').forEach(el => {
+				el.classList.remove('__hidden');
+				if (item.value !== el.dataset.itemTec) {
+					el.classList.add('__hidden');
+				}
+				// console.log('selected item:', item)
+			})
+
 		}
 	});
 
@@ -75,7 +92,16 @@ if (document.querySelector('.header-project__custom-select')) {
 			{ value: 'app', textItem: 'app' },
 		],
 		onSelect(item) {
-			console.log('selected item', item)
+			document.querySelectorAll('.item-projects').forEach(el => {
+				el.classList.remove('__hidden');
+				if (item.value !== el.dataset.itemType) {
+					el.classList.add('__hidden');
+				}
+				if (item.value === 'all-project') {
+					el.classList.remove('__hidden');
+				}
+			})
+
 		}
 	});
 
@@ -86,6 +112,9 @@ if (document.querySelector('.header-project__custom-select')) {
 			ButtonReset.addEventListener('click', () => {
 				select.reset();
 				ButtonReset.style.display = 'none';
+				document.querySelectorAll('.item-projects').forEach(el => {
+					el.classList.remove('__hidden')
+				})
 			});
 		}
 	}

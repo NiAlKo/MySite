@@ -1,6 +1,6 @@
 const getTamplate = (data = [], placeholder, selectedValue, desktop) => {
 	let text = placeholder ?? 'Select item please';
-	console.log(desktop)
+	// console.log(desktop)
 	const itemsSelect = data.map(item => {
 		let classItem = '';
 		let classDesktop = '';

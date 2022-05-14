@@ -10,9 +10,14 @@
       "slider"
       "column";
 
+    &.__hidden {
+      display: none;
+    }
+
     &:not(:last-child) {
       margin-bottom: 72px;
     }
+
     &__no-data {
       color: var(--alfa2);
       @include theme("light", "color", var(--alfa2-black));
