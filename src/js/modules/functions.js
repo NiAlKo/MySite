@@ -43,18 +43,21 @@ if (document.querySelector('.header-project__custom-select')) {
 			{ value: 'app', textItem: 'app' },
 		],
 		onSelect(item) {
-			document.querySelectorAll('.item-projects').forEach(el => {
-				el.classList.remove('__hidden');
-				if (item.value !== el.dataset.itemType) {
-					el.classList.add('__hidden');
-				}
-				if (item.value === 'all-project') {
-					el.classList.remove('__hidden');
-				}
-				// console.log('selected item:', item)
-			})
-
+			console.log('selected item', item)
 		}
+		// onSelect(item) {
+		// 	document.querySelectorAll('.item-projects').forEach(el => {
+		// 		el.classList.remove('__hidden');
+		// 		if (item.value !== el.dataset.itemType) {
+		// 			el.classList.add('__hidden');
+		// 		}
+		// 		if (item.value === 'all-project') {
+		// 			el.classList.remove('__hidden');
+		// 		}
+		// 		// console.log('selected item:', item)
+		// 	})
+
+		// }
 	});
 
 	const selectTechnologies = new customSelect('#custom-select1', {
@@ -68,17 +71,18 @@ if (document.querySelector('.header-project__custom-select')) {
 			{ value: 'next_js', textItem: 'next.js' },
 			{ value: 'php', textItem: 'php' },
 		],
-
 		onSelect(item) {
-			document.querySelectorAll('.item-projects').forEach(el => {
-				el.classList.remove('__hidden');
-				if (item.value !== el.dataset.itemTec) {
-					el.classList.add('__hidden');
-				}
-				// console.log('selected item:', item)
-			})
-
+			console.log('selected item1', item)
 		}
+		// onSelect(item) {
+		// 	document.querySelectorAll('.item-projects').forEach(el => {
+		// 		el.classList.remove('__hidden');
+		// 		if (item.value !== el.dataset.itemTec) {
+		// 			el.classList.add('__hidden');
+		// 		}
+		// 		// console.log('selected item:', item)
+		// 	})
+		// }
 	});
 
 	const selectTypeProject = new customSelect('#custom-select2', {
@@ -92,17 +96,20 @@ if (document.querySelector('.header-project__custom-select')) {
 			{ value: 'app', textItem: 'app' },
 		],
 		onSelect(item) {
-			document.querySelectorAll('.item-projects').forEach(el => {
-				el.classList.remove('__hidden');
-				if (item.value !== el.dataset.itemType) {
-					el.classList.add('__hidden');
-				}
-				if (item.value === 'all-project') {
-					el.classList.remove('__hidden');
-				}
-			})
-
+			console.log('selected item2', item)
 		}
+		// onSelect(item) {
+		// 	document.querySelectorAll('.item-projects').forEach(el => {
+		// 		el.classList.remove('__hidden');
+		// 		if (item.value !== el.dataset.itemType) {
+		// 			el.classList.add('__hidden');
+		// 		}
+		// 		if (item.value === 'all-project') {
+		// 			el.classList.remove('__hidden');
+		// 		}
+		// 	})
+
+		// }
 	});
 
 	function BtnReset(btnName, ...all) {
