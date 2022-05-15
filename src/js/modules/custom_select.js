@@ -1,6 +1,6 @@
 const getTamplate = (data = [], placeholder, selectedValue, desktop) => {
 	let text = placeholder ?? 'Select item please';
-	console.log(desktop)
+	// console.log(desktop)
 	const itemsSelect = data.map(item => {
 		let classItem = '';
 		let classDesktop = '';
@@ -78,6 +78,7 @@ export class customSelect {
 			btnSelect.style.display = 'block';
 			// console.log('value', value)
 			this.select(value);
+			this.onSelect(this.current);
 		} else if (type === 'select-backdrop') {
 			this.close();
 		}
@@ -101,6 +102,18 @@ export class customSelect {
 		this.$element.querySelector(`[data-value="${value}"]`).classList.add('__selected');
 		this.options.onSelect ? this.options.onSelect(this.current) : null;
 		this.close();
+	}
+
+	onSelect(item) {
+		document.querySelectorAll('.item-projects').forEach(el => {
+			el.classList.remove('__hidden');
+			if (item.value !== el.dataset.itemTec && item.value !== el.dataset.itemType) {
+				el.classList.add('__hidden');
+			} if (item.value === 'all-project') {
+				el.classList.remove('__hidden');
+			}
+			// console.log('selected item:', item)
+		})
 	}
 
 	toggle() {

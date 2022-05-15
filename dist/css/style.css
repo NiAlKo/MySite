@@ -1675,6 +1675,9 @@ body.theme-contrast {
 .theme-contrast .custom-select__item:hover, .theme-contrast .custom-select__item.__selected {
   color: var(--base-black);
 }
+.custom-select__item.__selected {
+  pointer-events: none;
+}
 .custom-select__item.__desktop {
   padding: 0;
 }
@@ -1807,6 +1810,9 @@ body.theme-contrast {
 .years .item-projects {
   display: grid;
   grid-template-areas: "info" "slider" "column";
+}
+.years .item-projects.__hidden {
+  display: none;
 }
 .years .item-projects:not(:last-child) {
   margin-bottom: 72px;
